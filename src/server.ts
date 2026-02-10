@@ -93,11 +93,16 @@ app.onError((err, c) => {
   return c.html('<h1>500 - Internal Server Error</h1>', 500);
 });
 
+
 const port = process.env.PORT || 3001;
 
 console.log(`🌞 SolarForce server running at http://localhost:${port}`);
 
+// Export for Bun runtime
 export default {
   port,
   fetch: app.fetch,
 };
+
+// Export for Vercel serverless
+export { app };

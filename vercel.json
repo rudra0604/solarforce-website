@@ -1,0 +1,9 @@
+{
+    "buildCommand": "bun install",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/api"
+        }
+    ]
+}
