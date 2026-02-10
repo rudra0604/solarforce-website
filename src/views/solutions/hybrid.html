@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hybrid Solar Solutions - SolarForce</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0052CC",
+                        "primary-dark": "#003d99",
+                        "background-light": "#f5f7fa",
+                        "background-dark": "#0b1120",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#111813] font-display">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+        <!-- Hero Section - Full Screen -->
+        <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center bg-no-repeat" data-alt="Modern hybrid solar home"
+                    style='background-image: url("https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=1920&auto=format&fit=crop");'>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-4xl">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+                        <span class="material-symbols-outlined text-cyan-400 text-sm">settings_power</span>
+                        <span class="text-white text-xs font-bold uppercase tracking-wide">Hybrid Series</span>
+                    </div>
+                    <h1
+                        class="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+                        The Best of <br /><span class="text-cyan-400">Both Worlds</span>
+                    </h1>
+                    <p class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed mb-8 max-w-2xl">
+                        Reliable grid connection meets battery backup security. Enjoy net metering benefits with power
+                        outage protection in one seamless system.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="/go-solar"
+                            class="flex h-14 px-8 items-center justify-center rounded-xl bg-primary hover:bg-blue-700 transition-all text-white text-base font-bold shadow-xl shadow-primary/30 hover:scale-105">
+                            Get a Quote
+                        </a>
+                        <!-- <button
+                            class="flex h-14 px-8 items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white/30 text-white text-base font-bold transition-all">
+                            View Components
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="w-full flex justify-center py-16 px-4 lg:px-10">
+        <div class="max-w-[1024px] w-full flex flex-col gap-12">
+            <div class="text-center flex flex-col items-center gap-4">
+                <h2 class="text-[#111813] text-3xl lg:text-4xl font-bold leading-tight tracking-tight">Why Choose
+                    Hybrid?</h2>
+                <p class="text-gray-600 text-lg max-w-[600px]">Experience the reliability of the grid with the
+                    security of backup power.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-gray-100 bg-white p-6 hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-[32px] text-primary">shield_with_heart</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-[#111813] text-xl font-bold">Grid Security</h3>
+                        <p class="text-gray-600 leading-relaxed">Keep your lights on during blackouts with automatic
+                            battery backup while staying connected to the utility.</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-gray-100 bg-white p-6 hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-[32px] text-primary">savings</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-[#111813] text-xl font-bold">Financial Sense</h3>
+                        <p class="text-gray-600 leading-relaxed">Earn credits through net metering by feeding excess
+                            energy to the grid when batteries are full.</p>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col gap-4 rounded-xl border border-gray-100 bg-white p-6 hover:shadow-lg transition-shadow">
+                    <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-[32px] text-primary">settings_suggest</span>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-[#111813] text-xl font-bold">Smart Management</h3>
+                        <p class="text-gray-600 leading-relaxed">Intelligent system automatically prioritizes solar,
+                            then battery storage, then grid power.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-[#f8fafc] py-20 px-4 lg:px-10">
+        <div class="max-w-[1200px] mx-auto flex flex-col items-center">
+            <h2 class="text-[#111813] text-3xl font-bold mb-12 text-center">Intelligent Energy Priority</h2>
+            <div class="flex flex-col lg:flex-row items-center justify-between w-full gap-8 relative">
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-[2px] bg-gray-200 -z-10 -translate-y-1/2">
+                </div>
+                <div
+                    class="flex flex-col items-center gap-4 bg-white p-6 rounded-xl shadow-sm border border-gray-100 z-10 w-full max-w-[320px]">
+                    <div
+                        class="size-16 rounded-full bg-yellow-100 flex items-center justify-center border-4 border-white shadow-md">
+                        <span class="material-symbols-outlined text-yellow-600 text-3xl">wb_sunny</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Priority 1</div>
+                        <h3 class="text-lg font-bold text-[#111813]">Solar Generation</h3>
+                        <p class="text-sm text-gray-600 mt-2">Power your home directly from the sun during the day.
+                        </p>
+                    </div>
+                </div>
+                <span class="material-symbols-outlined lg:hidden text-gray-400 rotate-90">arrow_forward</span>
+                <span
+                    class="hidden lg:block material-symbols-outlined text-gray-400 absolute left-[30%] -translate-x-1/2 bg-[#f8fafc] px-2 z-0">arrow_forward</span>
+                <div
+                    class="flex flex-col items-center gap-4 bg-white p-6 rounded-xl shadow-sm border border-gray-100 z-10 w-full max-w-[320px]">
+                    <div
+                        class="size-16 rounded-full bg-blue-50 flex items-center justify-center border-4 border-white shadow-md">
+                        <span class="material-symbols-outlined text-primary text-3xl">battery_charging_full</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Priority 2</div>
+                        <h3 class="text-lg font-bold text-[#111813]">Battery Storage</h3>
+                        <p class="text-sm text-gray-600 mt-2">Excess energy charges the battery bank for night use.
+                        </p>
+                    </div>
+                </div>
+                <span class="material-symbols-outlined lg:hidden text-gray-400 rotate-90">arrow_forward</span>
+                <span
+                    class="hidden lg:block material-symbols-outlined text-gray-400 absolute left-[70%] -translate-x-1/2 bg-[#f8fafc] px-2 z-0">arrow_forward</span>
+                <div
+                    class="flex flex-col items-center gap-4 bg-white p-6 rounded-xl shadow-sm border border-gray-100 z-10 w-full max-w-[320px]">
+                    <div
+                        class="size-16 rounded-full bg-blue-100 flex items-center justify-center border-4 border-white shadow-md">
+                        <span class="material-symbols-outlined text-blue-600 text-3xl">grid_view</span>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Priority 3</div>
+                        <h3 class="text-lg font-bold text-[#111813]">Grid Interaction</h3>
+                        <p class="text-sm text-gray-600 mt-2">Sell extra power to the grid or draw from it if
+                            needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full py-20 px-4 lg:px-10 bg-white">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                <div>
+                    <h2 class="text-[#111813] text-3xl font-bold mb-2">System Components</h2>
+                    <p class="text-gray-600">Built with tier-1 technology for maximum efficiency.</p>
+                </div>
+                <a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                    Download Spec Sheet <span class="material-symbols-outlined text-sm">download</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="group rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img alt="Hybrid Solar Inverter mounted on a white wall"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Hybrid solar inverter unit"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmLjY4bMJNWq-o2bAQkGYiFwqK6ci7zyJlQp6Bai6TuSBfAfBiAeKiHiK6uTWw9GB0q5EZ9zHPqUxRSeRL_TmrUj0anZz_H09wbSBRqd0pYTmRoUzvW5QPWEE-7MHq-1tLVpikn_d104Q6tF6v4MmqNVAPPUX7ob9Sx665CliOQFO17HyMoUYllFPxwXIO30mDpSQPPJuqP1Zu7sqK7C9ecR8V_x7MpJD9qsx9TNQp2sNh2p9S3H-DQc40DZufriawuaiMx59aDZw" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Hybrid Inverter</h3>
+                        <p class="text-sm text-gray-600">The brain of the system. Manages power flow between solar
+                            panels, batteries, and the grid simultaneously.</p>
+                    </div>
+                </div>
+                <div
+                    class="group rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img alt="Modern lithium ion battery bank unit for home storage"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Lithium battery bank unit"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3gohYAync72X-o9_fvhSd1WTVjk6RoXdeuNLxMF5VCKY47Yj80ThMxaopWpl22dw0lp4IbNqMw0-erdai67tMOG4133ZtTQ6ZRqJtEyo-1wkUL6l4ZWK9h4ZvHAZZR6aaPTVXbVmnxyMx3ztTrlGyRTNXW1vucBZItyjnIpqNDty4XxIp72yRZFlp5tLErvkSj6_b6bfHHoSJ30OWutjfXoio70KUdHPYcCVE3CyGnRVVU9k3Xyy4IEYtqJ1ZTNv1oxV1paBCTp4" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Li-ion Battery Bank</h3>
+                        <p class="text-sm text-gray-600">Compact, long-lasting energy storage. Choose from standard
+                            Lead-Acid or premium Lithium-Ion options.</p>
+                    </div>
+                </div>
+                <div
+                    class="group rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                    <div class="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <img alt="Smart meter digital display showing energy consumption graph"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Smart energy meter display"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW4qK-ycnyjJtngBM0aZnxZZcDTxWdYc8SxLciPv-Qklhb8Pfim16SdgUi_VhBNzK8HArxDrq6_DN3-nVAYzVI36GmcCqcqMGz_R4Q6uQqHPGtoQWBXFznFl6qLdzqusx4RIablV9fANdERFMxdZwtVTbKPcG4AaFmkg2uMIcFM-__25e8ILtqR32A3kODkt5lU7Rru1sKk-Yf9U1KXKGNx5PfmPCoVXQldFBfMzJXAqPnOJJqbls-IRjwJtMAObMy3DlnGhwnzhs" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg mb-2">Smart Energy Manager</h3>
+                        <p class="text-sm text-gray-600">Real-time monitoring app and hardware. Track your
+                            generation, consumption, and savings instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-full bg-[#f1f5f9] py-20 px-4 lg:px-10">
+        <div class="max-w-[1024px] mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-[#111813] text-3xl font-bold">Compare Solar Systems</h2>
+                <p class="text-gray-600 mt-2">See why Hybrid is the most versatile choice for modern homes.</p>
+            </div>
+            <div class="overflow-x-auto rounded-xl shadow-lg bg-white">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50 border-b border-gray-100">
+                            <th class="p-6 text-sm font-bold text-gray-500 uppercase tracking-wider w-1/4">Features
+                            </th>
+                            <th class="p-6 text-lg font-bold text-gray-800 w-1/4">On-Grid</th>
+                            <th class="p-6 text-lg font-bold text-gray-800 w-1/4">Off-Grid</th>
+                            <th
+                                class="p-6 text-lg font-bold text-[#111813] bg-primary/10 w-1/4 border-b-2 border-primary">
+                                Hybrid</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr>
+                            <td class="p-6 font-medium text-gray-700">Backup Power (Outages)</td>
+                            <td class="p-6 text-red-500"><span class="material-symbols-outlined">close</span></td>
+                            <td class="p-6 text-primary"><span class="material-symbols-outlined">check</span></td>
+                            <td class="p-6 text-primary bg-primary/5 font-bold"><span
+                                    class="material-symbols-outlined">check</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium text-gray-700">Net Metering (Sell Power)</td>
+                            <td class="p-6 text-primary"><span class="material-symbols-outlined">check</span></td>
+                            <td class="p-6 text-red-500"><span class="material-symbols-outlined">close</span></td>
+                            <td class="p-6 text-primary bg-primary/5 font-bold"><span
+                                    class="material-symbols-outlined">check</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium text-gray-700">Grid Dependency</td>
+                            <td class="p-6 text-gray-600 text-sm">100% Dependent</td>
+                            <td class="p-6 text-gray-600 text-sm">None (Isolated)</td>
+                            <td class="p-6 bg-primary/5 text-sm font-bold text-[#111813]">Flexible</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium text-gray-700">Initial Cost</td>
+                            <td class="p-6 text-gray-600 text-sm">Low</td>
+                            <td class="p-6 text-gray-600 text-sm">High</td>
+                            <td class="p-6 bg-primary/5 text-sm font-bold text-[#111813]">Medium</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium text-gray-700">Govt. Subsidies</td>
+                            <td class="p-6 text-primary"><span class="material-symbols-outlined">check</span></td>
+                            <td class="p-6 text-gray-400"><span class="material-symbols-outlined">remove</span></td>
+                            <td class="p-6 text-primary bg-primary/5 font-bold"><span
+                                    class="material-symbols-outlined">check</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="w-full py-20 px-4 lg:px-10 bg-white">
+        <div
+            class="max-w-[800px] mx-auto bg-gradient-to-br from-[#0a1a33] to-[#102b4d] rounded-2xl p-8 lg:p-12 text-center relative overflow-hidden group">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+            </div>
+            <div class="relative z-10 flex flex-col items-center gap-6">
+                <h2 class="text-white text-3xl lg:text-4xl font-bold leading-tight">Ready to switch to Hybrid?</h2>
+                <p class="text-gray-300 text-lg max-w-[500px]">Get a customized quote designed for your home's
+                    unique energy needs.</p>
+                <a href="/go-solar"
+                    class="flex min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-primary-dark text-white text-base font-bold transition-all hover:scale-105 shadow-lg shadow-blue-900/50">
+                    Request a Custom Quote
+                </a>
+                <p class="text-xs text-gray-400 mt-2">Free consultation • No obligation • Instant estimation</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

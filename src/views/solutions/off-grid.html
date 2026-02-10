@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Off-Grid Solar Solutions - SolarForce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <!--     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" /> -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0052CC",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white font-display overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+        <!-- Hero Section - Full Screen -->
+        <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center bg-no-repeat"
+                    data-alt="Remote off-grid home with solar panels"
+                    style='background-image: url("https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=1920&auto=format&fit=crop");'>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-4xl">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+                        <span class="material-symbols-outlined text-yellow-400 text-sm">bolt</span>
+                        <span class="text-white text-xs font-bold uppercase tracking-wide">Off-Grid Series</span>
+                    </div>
+                    <h1
+                        class="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+                        Energy Independence <br /><span class="text-green-400">Anywhere</span>
+                    </h1>
+                    <p class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed mb-8 max-w-2xl">
+                        Reliable power where the grid can't reach. Our off-grid systems provide complete autonomy with
+                        high-efficiency storage.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="/go-solar"
+                            class="flex h-14 px-8 items-center justify-center rounded-xl bg-primary hover:bg-blue-700 transition-all text-white text-base font-bold shadow-xl shadow-primary/30 hover:scale-105">
+                            Get a Quote
+                        </a>
+                        <!-- <button
+                            class="flex h-14 px-8 items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white/30 text-white text-base font-bold transition-all">
+                            How It Works
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="flex flex-col items-center w-full">
+        <section class="w-full max-w-[1200px] px-4 sm:px-10 py-16 md:py-24">
+            <div class="mb-12">
+                <h2 class="text-[#111813] text-3xl md:text-4xl font-bold mb-4">What is an Off-Grid Solar System?</h2>
+                <p class="text-gray-600 text-base max-w-4xl">
+                    An off-grid solar system is a standalone power setup that operates completely independently from the
+                    traditional electric grid. Unlike on-grid systems, it uses batteries to store energy generated
+                    during sunshine hours for use at night or during cloudy periods, ensuring 24/7 power availability.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-8 rounded-lg border border-gray-200">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4 block">landscape</span>
+                    <h3 class="text-lg font-bold text-[#111813] mb-3">When to Use Off-Grid Solar?</h3>
+                    <ul class="space-y-3 text-gray-600 text-sm">
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            <span>You live in a remote area with no utility grid connection</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            <span>Your area faces extreme and frequent power cuts</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            <span>The grid is unreliable or too expensive to connect</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            <span>Farmhouses, cabins, or rural industrial setups</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4 block">info</span>
+                    <h3 class="text-lg font-bold text-[#111813] mb-3">Important to Know</h3>
+                    <div class="space-y-4 text-gray-600 text-sm">
+                        <p>
+                            <strong class="text-[#111813]">Not for Most Urban Homes:</strong> If you have reliable grid
+                            connection, on-grid solar is more cost-effective, requires less maintenance, and offers
+                            government subsidies.
+                        </p>
+                        <p>
+                            <strong class="text-[#111813]">No Government Subsidy:</strong> Off-grid systems are not
+                            eligible for subsidies under PM Surya Ghar Muft Bijli Yojana.
+                        </p>
+                        <p>
+                            <strong class="text-[#111813]">Higher Initial Cost:</strong> Due to battery requirements,
+                            off-grid systems cost more upfront than on-grid alternatives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <!-- Core System Components -->
+    <section class="w-full bg-slate-50 dark:bg-[#15202b] py-16 md:py-24 border-y border-gray-100 dark:border-gray-800">
+        <div class="w-full max-w-[1200px] px-4 sm:px-10 mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-[#111813] dark:text-white text-3xl md:text-4xl font-bold mb-4">Core System
+                    Components</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-base">Every SolarForce off-grid system is engineered
+                    with premium components designed for longevity and efficiency.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-100 dark:bg-gray-800 relative">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Monocrystalline solar panels reflecting sunlight"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsXiLgbN6OtzvjAVXoyg9u6ZEZzuQUCHsnAsVcuzQ9h6FuWLjaNhdlo4QkSHDlxrDMH-eM_LZYfqiOmdr372Ixj47VImpTELZebV6bKDcVSdgUk9EJH-6GwA7L8DUmF2qc4zPWSkstm5wHGiX2JMinAlZwtconHTnHFbAVHLmCPCt4PR9PdR_OoVA-NIdFr4Kp61qVOlrxdi_mJH3i6ilz7mVFLjYzvTsPsp0pCebLqlnBz1tthm8vyi25U1JquCv2pF9yflHGXbg");'>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-primary">
+                            <span class="material-symbols-outlined">solar_power</span>
+                            <span class="text-xs font-bold uppercase tracking-wider">Generation</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#111813] dark:text-white mb-2">Solar PV Panels</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">High-efficiency Monocrystalline PERC
+                            panels designed to maximize energy capture even in low-light conditions.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-100 dark:bg-gray-800 relative">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Modern sleek solar battery storage unit on a wall"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjNjiaMdxwjMQ-vC2_H4IUnUeG6GV11Rbg56lBqWM0DQFfmkS2A_9VcuoYv7bVjMbQLRSTzeDW0wLM_SJRDmgdi5hYW8hZ2UlwcHbceojMXmkmdpcf84BC69wPailSyGSjFOXBHcCXAkgxxhuLvC064tPkFm7Zu7a0PFo0koFkV7Ovyt8qTiY5tZf76QgTsTo5NxBcMt9KxMydL5IHmxOpsKcjXuEfBteTMaPV4wgzcJKyHf5Gyhb3aTGEriJnPwgp1T8Vq1SLga8");'>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-primary">
+                            <span class="material-symbols-outlined">battery_full_alt</span>
+                            <span class="text-xs font-bold uppercase tracking-wider">Storage</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#111813] dark:text-white mb-2">Battery Bank</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Deep-cycle Tall Tubular or Lithium-Ion
+                            batteries. Stores surplus energy during the day for night-time usage.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-100 dark:bg-gray-800 relative">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Electrical inverter unit with digital display"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBn1-VN9BB9tC1BoCgIm0MMN-MIlQ9IMzWxnFQ7HLN5hfat5FlotFHkv5E8037gQ_Nk31SHI1EXpYVSvFcawrXs_nh6y33uEuxOyL3KoqaJUpFRP8ma_fUlHgUoQRliKY-EcE9tpGgPbPG8Wbn3gZ24mrmD7gkWcRVS6NavibbYN4VdN8w5OI704t40SW9mDEwQkCrsBeBtuuOSx-bk74i54yS6juTOeIxjxvrD_XldctPfKdjb3v4GEhGTASerVq-YkqOLwdfcs7U");'>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-primary">
+                            <span class="material-symbols-outlined">electric_meter</span>
+                            <span class="text-xs font-bold uppercase tracking-wider">Conversion</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#111813] dark:text-white mb-2">Off-Grid Inverter</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Pure Sine Wave inverters that convert
+                            DC current to AC, ensuring safe power for sensitive electronics.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-100 dark:bg-gray-800 relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Abstract visualization of MPPT technology"
+                            style="background-image: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);"></div>
+                        <span
+                            class="material-symbols-outlined text-white/20 text-8xl relative z-10">settings_input_component</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-primary">
+                            <span class="material-symbols-outlined">tune</span>
+                            <span class="text-xs font-bold uppercase tracking-wider">Regulation</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#111813] dark:text-white mb-2">MPPT Charge Controller
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Maximizes power extraction from panels
+                            and protects batteries from overcharging. Often built-in.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-100 dark:bg-gray-800 relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Metal mounting structures for solar panels on a roof"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQEWCuN7ghXbDpf2HvQW-nAIzMuSpil7I7rwODcAS8-uL9iqvEW2rqS3Toqz7I0zP840ohIX2ABUZj0B4czlF7sax8cxRv2KKveLOqjmbiJjkLt79I-i0blhxwSIAjuPZDqjm8wcpzhQWHPw-x9lJa9u64P-s93-BNdVgoOQVD1Tt-zSeukbWeQvdXGD8ZWXaWHb8IpqEe5Ss_i_pfqfyZv2QAUwDtoqFI7ktboHvO_Ykp61ixkeQSgs3GCy9mOwdpL2r3Wysqvwo");'>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-primary">
+                            <span class="material-symbols-outlined">construction</span>
+                            <span class="text-xs font-bold uppercase tracking-wider">Support</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#111813] dark:text-white mb-2">Mounting Structure</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Hot-dipped galvanized iron structures
+                            designed to withstand high wind speeds and corrosion.</p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gray-100 dark:bg-gray-800 relative flex items-center justify-center">
+                        <div class="absolute inset-0 bg-cover bg-center"
+                            data-alt="Assorted electrical cables and safety switches"
+                            style="background-image: linear-gradient(135deg, #334155 0%, #1e293b 100%);"></div>
+                        <span class="material-symbols-outlined text-white/20 text-8xl relative z-10">cable</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3 text-primary">
+                            <span class="material-symbols-outlined">electrical_services</span>
+                            <span class="text-xs font-bold uppercase tracking-wider">Safety</span>
+                        </div>
+                        <h3 class="text-base font-bold text-[#111813] dark:text-white mb-2">Balance of System</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Includes DC cables, AC/DC distribution
+                            boxes, lightning arresters, and earthing kits for total safety.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full max-w-[1200px] mx-auto px-4 sm:px-10 py-16 md:py-24">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-[#111813] dark:text-white text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-base">From sunrise to flipping the switch, here is the
+                journey of your power.</p>
+        </div>
+        <div class="relative">
+            <div class="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gray-200 dark:bg-gray-700 -z-10">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-[#1a2632] border-4 border-primary/20 group-hover:border-primary transition-all flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-sky-400">wb_sunny</span>
+                    </div>
+                    <h4 class="text-base font-bold text-[#111813] dark:text-white mb-2">1. Absorption</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Solar panels absorb sunlight and convert it
+                        into DC electricity.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-[#1a2632] border-4 border-primary/20 group-hover:border-primary transition-all flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-blue-500">settings_input_component</span>
+                    </div>
+                    <h4 class="text-base font-bold text-[#111813] dark:text-white mb-2">2. Regulation</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Charge controller regulates voltage to
+                        safely charge batteries.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-[#1a2632] border-4 border-primary/20 group-hover:border-primary transition-all flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-blue-600">battery_charging_full</span>
+                    </div>
+                    <h4 class="text-base font-bold text-[#111813] dark:text-white mb-2">3. Storage</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Energy is stored in the battery bank for
+                        later use.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-[#1a2632] border-4 border-primary/20 group-hover:border-primary transition-all flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-indigo-500">electric_bolt</span>
+                    </div>
+                    <h4 class="text-base font-bold text-[#111813] dark:text-white mb-2">4. Conversion</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Inverter converts DC from batteries to AC
+                        for your home.</p>
+                </div>
+                <div class="flex flex-col items-center text-center group">
+                    <div
+                        class="size-24 rounded-full bg-white dark:bg-[#1a2632] border-4 border-primary/20 group-hover:border-primary transition-all flex items-center justify-center mb-6 shadow-sm">
+                        <span class="material-symbols-outlined text-4xl text-sky-600">home</span>
+                    </div>
+                    <h4 class="text-base font-bold text-[#111813] dark:text-white mb-2">5. Delivery</h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Clean power runs your appliances, day or
+                        night.</p>
+                </div>
+            </div>
+    </section>
+    </div>
+
+    <!-- Pricing Table -->
+    <div class="w-full bg-white py-16">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+            <div class="w-full max-w-[1200px]">
+                <div class="text-center mb-12">
+                    <h2 class="text-[#111813] text-3xl md:text-4xl font-bold mb-4">Off-Grid Solar System Pricing</h2>
+                    <p class="text-gray-600 text-base">Estimated pricing based on system capacity (market estimates)</p>
+                </div>
+
+                <div class="overflow-hidden rounded-lg border border-gray-200 mb-6">
+                    <table class="w-full">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-[#111813]">Capacity</th>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-[#111813]">Price Range</th>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-[#111813]">Batteries Needed</th>
+                                <th class="px-6 py-4 text-left text-sm font-bold text-[#111813]">Typical Load</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm font-bold text-[#111813]">1 kW</td>
+                                <td class="px-6 py-4 text-sm text-primary font-bold">₹85,000 - ₹1,00,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">1 battery</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Lights, Fans, TV</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm font-bold text-[#111813]">2 kW</td>
+                                <td class="px-6 py-4 text-sm text-primary font-bold">₹1,30,000 - ₹1,60,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">1 battery </td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Above + Fridge, Mixer</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm font-bold text-[#111813]">3 kW</td>
+                                <td class="px-6 py-4 text-sm text-primary font-bold">₹1,80,000 - ₹2,00,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">2-4 batteries (100AH)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Above + Washing Machine</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm font-bold text-[#111813]">4 kW</td>
+                                <td class="px-6 py-4 text-sm text-primary font-bold">₹2,20,000 - ₹2,60,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">3-6 batteries</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Full Home Appliances</td>
+                            </tr>
+                            <tr class="bg-white hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm font-bold text-[#111813]">5 kW</td>
+                                <td class="px-6 py-4 text-sm text-primary font-bold">₹2,95,000 - ₹3,20,000</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">4-8 batteries (500AH)</td>
+                                <td class="px-6 py-4 text-sm text-gray-600">Above + 1HP AC</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <div class="flex gap-3">
+                        <span class="material-symbols-outlined text-yellow-600">info</span>
+                        <div>
+                            <p class="text-sm text-gray-700 mb-2"><strong>Important Note:</strong> SolarForce does not currently install off-grid solar systems. The prices listed above are standard market estimates for informational purposes.</p>
+                            <p class="text-sm text-gray-700">Final pricing depends on location, component brands, battery type (lead-acid vs lithium-ion), and installation complexity.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Advantages & Disadvantages -->
+    <div class="w-full bg-gray-50 py-16">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+            <div class="w-full max-w-[1200px]">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#111813] mb-6">Advantages</h2>
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+                                    <div>
+                                        <h3 class="font-bold text-base text-[#111813] mb-2">Power Where You Need It</h3>
+                                        <p class="text-sm text-gray-600">The only option for rural areas with no grid
+                                            connection. Brings electricity to remote locations.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+                                    <div>
+                                        <h3 class="font-bold text-base text-[#111813] mb-2">Zero Emissions</h3>
+                                        <p class="text-sm text-gray-600">Clean, green energy source that generates no
+                                            pollution while powering your home.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">check_circle</span>
+                                    <div>
+                                        <h3 class="font-bold text-base text-[#111813] mb-2">Complete Independence</h3>
+                                        <p class="text-sm text-gray-600">No reliance on unreliable grid. Power
+                                            availability 24/7 regardless of external conditions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-2xl font-bold text-[#111813] mb-6">Considerations</h2>
+                        <div class="space-y-4">
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-gray-600 text-2xl">info</span>
+                                    <div>
+                                        <h3 class="font-bold text-base text-[#111813] mb-2">Longer ROI Period</h3>
+                                        <p class="text-sm text-gray-600">Typically 6-7 years to break even compared to
+                                            3-4 years for on-grid systems due to battery costs.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-gray-600 text-2xl">info</span>
+                                    <div>
+                                        <h3 class="font-bold text-base text-[#111813] mb-2">Battery Replacement</h3>
+                                        <p class="text-sm text-gray-600">Batteries need replacement every 5-7 years,
+                                            adding to long-term maintenance costs.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="flex gap-4">
+                                    <span class="material-symbols-outlined text-gray-600 text-2xl">info</span>
+                                    <div>
+                                        <h3 class="font-bold text-base text-[#111813] mb-2">No Subsidy Available</h3>
+                                        <p class="text-sm text-gray-600">Indian government does not offer subsidies for
+                                            off-grid systems under current policies.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- On-Grid vs Off-Grid Comparison -->
+    <div class="w-full bg-white py-16">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+            <div class="w-full max-w-[1200px]">
+                <div class="text-center mb-12">
+                    <h2 class="text-[#111813] text-3xl md:text-4xl font-bold mb-4">On-Grid vs Off-Grid: Which is Better?
+                    </h2>
+                    <p class="text-gray-600 text-base max-w-3xl mx-auto">
+                        For most urban homes with reliable grid access, on-grid solar is the better choice. Here's why:
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">payments</span>
+                        <h3 class="font-bold text-base text-[#111813] mb-3">Lower Cost</h3>
+                        <p class="text-sm text-gray-600 mb-3">On-grid systems cost significantly less as they don't
+                            require expensive battery banks.</p>
+                        <p class="text-xs text-gray-500">Example: 3kW on-grid ₹1.02L-₹1.57L (after subsidy) vs 3kW
+                            off-grid ₹2.55L-₹3L</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">verified</span>
+                        <h3 class="font-bold text-base text-[#111813] mb-3">Government Subsidy</h3>
+                        <p class="text-sm text-gray-600 mb-3">Eligible for ₹30,000-₹78,000 subsidy under PM Surya Ghar
+                            Muft Bijli Yojana.</p>
+                        <p class="text-xs text-gray-500">Off-grid systems don't qualify for any government subsidies.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">build</span>
+                        <h3 class="font-bold text-base text-[#111813] mb-3">Less Maintenance</h3>
+                        <p class="text-sm text-gray-600 mb-3">No batteries means minimal maintenance - just occasional
+                            panel cleaning.</p>
+                        <p class="text-xs text-gray-500">Off-grid requires battery maintenance and replacement every 5-7
+                            years.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">currency_rupee</span>
+                        <h3 class="font-bold text-base text-[#111813] mb-3">Faster ROI</h3>
+                        <p class="text-sm text-gray-600 mb-3">On-grid systems typically break even in 3-4 years vs 6-7
+                            years for off-grid.</p>
+                        <p class="text-xs text-gray-500">Lower upfront cost and subsidies accelerate return on
+                            investment.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">bolt</span>
+                        <h3 class="font-bold text-base text-[#111813] mb-3">Earn Credits</h3>
+                        <p class="text-sm text-gray-600 mb-3">Excess power fed to grid earns you credits, reducing
+                            future electricity bills.</p>
+                        <p class="text-xs text-gray-500">Off-grid can only store excess in batteries (limited capacity).
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4 block">eco</span>
+                        <h3 class="font-bold text-base text-[#111813] mb-3">Better for Environment</h3>
+                        <p class="text-sm text-gray-600 mb-3">No battery manufacturing/disposal means smaller
+                            environmental footprint.</p>
+                        <p class="text-xs text-gray-500">Lead-acid batteries require careful disposal and recycling.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="font-bold text-base text-[#111813] mb-3">When Off-Grid Makes Sense:</h3>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex gap-2"><span class="text-primary">•</span> No grid connection available in your
+                            area</li>
+                        <li class="flex gap-2"><span class="text-primary">•</span> Extremely frequent and long power
+                            cuts (grid unreliable)</li>
+                        <li class="flex gap-2"><span class="text-primary">•</span> Grid connection cost is prohibitively
+                            expensive</li>
+                        <li class="flex gap-2"><span class="text-primary">•</span> Remote farmhouse, cabin, or rural
+                            industrial setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="w-full bg-gray-50 py-16">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+            <div class="w-full max-w-[1200px]">
+                <div class="text-center mb-12">
+                    <h2 class="text-[#111813] text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 text-base">Common questions about off-grid solar systems</p>
+                </div>
+
+                <div class="space-y-4">
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            How much does an off-grid solar system cost?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>Off-grid solar system costs vary based on capacity, panel type, inverter quality, and
+                                battery type:</p>
+                            <ul class="mt-2 space-y-1 ml-4">
+                                <li>• 2 kW: ₹1,70,000 - ₹2,00,000</li>
+                                <li>• 3 kW: ₹2,55,000 - ₹3,00,000</li>
+                                <li>• 4 kW: ₹3,40,000 - ₹4,00,000</li>
+                                <li>• 5 kW: ₹4,25,000 - ₹5,00,000</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            What is the disadvantage of off-grid solar?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>The main disadvantage is longer ROI (6-7 years vs 3-4 years for on-grid) due to higher
+                                upfront costs from batteries. Other considerations include battery replacement every 5-7
+                                years, higher maintenance, and no government subsidies available.</p>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            Is there a subsidy for off-grid solar systems?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>No. The Indian government currently offers subsidies only for on-grid rooftop solar
+                                systems under the PM Surya Ghar Muft Bijli Yojana, not for off-grid systems.</p>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            How many batteries are required for off-grid solar systems?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>Battery requirements depend on system size and your backup needs:</p>
+                            <ul class="mt-2 space-y-1 ml-4">
+                                <li>• 3 kW system: 8-9 batteries of 100 AH capacity</li>
+                                <li>• 5 kW system: 10-11 batteries of 500 AH capacity</li>
+                            </ul>
+                            <p class="mt-2">Lithium-ion batteries require fewer units than lead-acid but cost more.</p>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            How long do off-grid solar batteries last?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>Lead-acid batteries typically last 5-7 years with proper maintenance. Lithium-ion
+                                batteries can last 10-15 years but cost significantly more upfront. Battery lifespan
+                                depends on depth of discharge, charging patterns, and maintenance.</p>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            Can I add batteries to my existing on-grid system?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>Adding batteries to an on-grid system converts it to a hybrid system (not off-grid). This
+                                gives you backup power during outages while still maintaining grid connection. A hybrid
+                                inverter and battery bank are required for this upgrade.</p>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            What size off-grid system do I need for my home?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>System size depends on your daily energy consumption and backup requirements. Calculate
+                                your total wattage of appliances and hours of use. A 3kW system suits small homes (2-3
+                                BHK) with basic appliances. 5kW+ needed for larger homes with AC, water heaters, etc.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                        <summary class="px-6 py-4 cursor-pointer font-bold text-base text-[#111813] hover:bg-gray-50">
+                            Do off-grid systems work during cloudy days?
+                        </summary>
+                        <div class="px-6 pb-4 text-sm text-gray-600 border-t border-gray-200 pt-4">
+                            <p>Yes, off-grid systems work during cloudy days by drawing power from the battery bank
+                                charged during sunny periods. However, prolonged cloudy weather can deplete batteries.
+                                Many off-grid setups include a backup generator for extended low-sun periods.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="w-full bg-primary py-16">
+        <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+            <div class="w-full max-w-[1200px] text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Explore Solar Solutions?</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto">
+                    While we don't install off-grid systems, we're experts in on-grid and hybrid solutions. Get a free
+                    consultation to find the best solar setup for your needs.
+                </p>
+                <a href="/contact"
+                    class="inline-block px-8 py-4 bg-white hover:bg-gray-100 text-primary font-bold rounded-lg transition-colors">
+                    Get Free Solar Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

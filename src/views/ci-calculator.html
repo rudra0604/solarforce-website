@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commercial & Industrial Solar Calculator | SolarForce</title>
+    <meta name="description"
+        content="Calculate solar savings for your factory, warehouse, office or commercial building. Get IRR, NPV, payback period and 25-year cashflow projections." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/fav-icon/icon.png" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0066FF',
+                        secondary: '#00D4AA',
+                        dark: '#0F172A',
+                    },
+                    fontFamily: {
+                        display: ['Inter', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Chart.js for visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .tooltip-trigger:hover+.tooltip-content,
+        .tooltip-content:hover {
+            display: block;
+        }
+
+        .tooltip-content {
+            display: none;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: #e2e8f0;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #0066FF;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-active {
+            border-bottom: 3px solid #0066FF;
+            color: #0066FF;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="/img/logo/logo.png" alt="SolarForce" class="h-8 w-auto" />
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a href="/calculator" class="text-sm text-gray-600 hover:text-primary">Residential Calculator</a>
+                    <a href="/solutions/on-grid" class="text-sm text-gray-600 hover:text-primary">Solutions</a>
+                    <a href="/contact" class="text-sm text-gray-600 hover:text-primary">Contact</a>
+                </nav>
+                <a href="/contact"
+                    class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition">
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-12 lg:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span
+                        class="inline-block bg-blue-500/20 text-blue-300 text-sm font-medium px-4 py-1.5 rounded-full mb-4">
+                        For Businesses & Industries
+                    </span>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                        Commercial & Industrial Solar Calculator
+                    </h1>
+                    <p class="text-lg text-blue-100 mb-6">
+                        Calculate ROI, payback period, and 25-year savings for your factory, warehouse, or commercial
+                        building
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm">
+                        <div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+                            <span class="material-symbols-outlined text-green-400 text-lg">check_circle</span>
+                            <span>IRR & NPV Analysis</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+                            <span class="material-symbols-outlined text-green-400 text-lg">check_circle</span>
+                            <span>25-Year Cashflow</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-full">
+                            <span class="material-symbols-outlined text-green-400 text-lg">check_circle</span>
+                            <span>CAPEX & OPEX Models</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="py-8 lg:py-12 -mt-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <!-- Calculator Tabs -->
+                    <div class="border-b border-gray-200">
+                        <div class="flex">
+                            <button id="tabCapex" onclick="switchOwnershipModel('capex')"
+                                class="flex-1 px-6 py-4 text-center font-semibold tab-active transition">
+                                <span class="material-symbols-outlined align-middle mr-1">account_balance</span>
+                                CAPEX (Self-Owned)
+                            </button>
+                            <button id="tabOpex" onclick="switchOwnershipModel('opex')"
+                                class="flex-1 px-6 py-4 text-center font-semibold text-gray-500 hover:text-gray-700 transition">
+                                <span class="material-symbols-outlined align-middle mr-1">handshake</span>
+                                OPEX / PPA (Third-Party)
+                            </button>
+                        </div>
+                    </div>
+
+                    <form id="ciCalculatorForm" class="p-6 lg:p-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Left Column - Inputs -->
+                            <div class="space-y-6">
+                                <!-- Business Type -->
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-3">Business Type</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="relative cursor-pointer">
+                                            <input type="radio" name="customerSegment" value="industrial"
+                                                class="peer sr-only" checked />
+                                            <div
+                                                class="p-4 border-2 rounded-xl text-center peer-checked:border-primary peer-checked:bg-blue-50 hover:border-gray-300 transition">
+                                                <span
+                                                    class="material-symbols-outlined text-3xl mb-2 text-gray-600 peer-checked:text-primary">factory</span>
+                                                <div class="font-medium">Industrial</div>
+                                                <div class="text-xs text-gray-500">Factory, Warehouse, Manufacturing
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <label class="relative cursor-pointer">
+                                            <input type="radio" name="customerSegment" value="commercial"
+                                                class="peer sr-only" />
+                                            <div
+                                                class="p-4 border-2 rounded-xl text-center peer-checked:border-primary peer-checked:bg-blue-50 hover:border-gray-300 transition">
+                                                <span
+                                                    class="material-symbols-outlined text-3xl mb-2 text-gray-600 peer-checked:text-primary">apartment</span>
+                                                <div class="font-medium">Commercial</div>
+                                                <div class="text-xs text-gray-500">Office, Mall, Hospital, School</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Location -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                            City / State
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <select id="cityInput"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                            <option value="">Select City</option>
+                                            <option value="Mumbai">Mumbai</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Bangalore">Bangalore</option>
+                                            <option value="Hyderabad">Hyderabad</option>
+                                            <option value="Chennai">Chennai</option>
+                                            <option value="Pune">Pune</option>
+                                            <option value="Ahmedabad">Ahmedabad</option>
+                                            <option value="Kolkata">Kolkata</option>
+                                            <option value="Gurugram">Gurugram</option>
+                                            <option value="Noida">Noida</option>
+                                            <option value="Indore">Indore</option>
+                                            <option value="Bhopal">Bhopal</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                            Pincode
+                                        </label>
+                                        <input type="text" id="pincodeInput" maxlength="6" pattern="[0-9]{6}"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                            placeholder="e.g., 400001" />
+                                    </div>
+                                </div>
+
+                                <!-- Consumption Input Toggle -->
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-sm font-semibold text-gray-700">
+                                            Electricity Consumption
+                                            <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="flex bg-gray-100 rounded-lg p-0.5">
+                                            <button type="button" id="btnInputKwh"
+                                                onclick="toggleConsumptionInput('kwh')"
+                                                class="px-3 py-1 text-xs font-medium rounded-md bg-white shadow text-primary">kWh/month</button>
+                                            <button type="button" id="btnInputBill"
+                                                onclick="toggleConsumptionInput('bill')"
+                                                class="px-3 py-1 text-xs font-medium rounded-md text-gray-500">₹
+                                                Bill/month</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputKwh">
+                                        <div class="relative">
+                                            <input type="number" id="monthlyConsumption" min="1000" max="10000000"
+                                                value="50000"
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent pr-20"
+                                                placeholder="Monthly consumption" />
+                                            <span
+                                                class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm">kWh/month</span>
+                                        </div>
+                                        <input type="range" id="consumptionSlider" min="1000" max="500000" step="1000"
+                                            value="50000" class="w-full mt-2" />
+                                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                            <span>1,000 kWh</span>
+                                            <span>500,000 kWh</span>
+                                        </div>
+                                    </div>
+
+                                    <div id="inputBill" class="hidden">
+                                        <div class="relative">
+                                            <span
+                                                class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                                            <input type="number" id="monthlyBill" min="10000" max="50000000"
+                                                value="400000"
+                                                class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                                placeholder="Monthly bill amount" />
+                                        </div>
+                                        <input type="range" id="billSlider" min="10000" max="5000000" step="10000"
+                                            value="400000" class="w-full mt-2" />
+                                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                                            <span>₹10,000</span>
+                                            <span>₹50,00,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Average Tariff -->
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <label class="text-sm font-semibold text-gray-700">Average Electricity
+                                            Tariff</label>
+                                        <div class="relative tooltip-trigger">
+                                            <span
+                                                class="material-symbols-outlined text-gray-400 text-lg cursor-help">info</span>
+                                            <div
+                                                class="tooltip-content absolute left-6 top-0 w-64 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                Your average cost per unit (kWh). Check your electricity bill or use the
+                                                regional default.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="relative flex-1">
+                                            <span
+                                                class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                                            <input type="number" id="avgTariff" min="4" max="20" step="0.1" value=""
+                                                class="w-full pl-8 pr-16 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                                                placeholder="Auto" />
+                                            <span
+                                                class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm">/kWh</span>
+                                        </div>
+                                        <button type="button" onclick="useRegionalTariff()"
+                                            class="px-4 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50">
+                                            Use Default
+                                        </button>
+                                    </div>
+                                    <p id="tariffHint" class="text-xs text-gray-500 mt-1">Regional default will be used
+                                        based on city</p>
+                                </div>
+
+                                <!-- Installation Type -->
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-700 mb-3">Installation
+                                        Type</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <label class="relative cursor-pointer">
+                                            <input type="radio" name="installationType" value="rooftop"
+                                                class="peer sr-only" checked />
+                                            <div
+                                                class="p-3 border-2 rounded-lg text-center peer-checked:border-primary peer-checked:bg-blue-50 hover:border-gray-300 transition">
+                                                <span
+                                                    class="material-symbols-outlined text-2xl text-gray-600 peer-checked:text-primary">roofing</span>
+                                                <div class="text-sm font-medium mt-1">Rooftop</div>
+                                            </div>
+                                        </label>
+                                        <label class="relative cursor-pointer">
+                                            <input type="radio" name="installationType" value="ground"
+                                                class="peer sr-only" />
+                                            <div
+                                                class="p-3 border-2 rounded-lg text-center peer-checked:border-primary peer-checked:bg-blue-50 hover:border-gray-300 transition">
+                                                <span
+                                                    class="material-symbols-outlined text-2xl text-gray-600 peer-checked:text-primary">grass</span>
+                                                <div class="text-sm font-medium mt-1">Ground-mounted</div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Available Area -->
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <label class="text-sm font-semibold text-gray-700">Available Area
+                                            (Optional)</label>
+                                        <div class="relative tooltip-trigger">
+                                            <span
+                                                class="material-symbols-outlined text-gray-400 text-lg cursor-help">info</span>
+                                            <div
+                                                class="tooltip-content absolute left-6 top-0 w-64 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                Shadow-free area available for solar panels. ~100 sq.ft per kW for
+                                                rooftop, ~120 sq.ft for ground.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="number" id="availableArea" min="0" max="1000000"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent pr-16"
+                                            placeholder="Leave empty for auto-calculation" />
+                                        <span
+                                            class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm">sq.ft</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column - Advanced Options -->
+                            <div class="space-y-6">
+                                <!-- PPA Options (OPEX only) -->
+                                <div id="ppaOptions" class="hidden">
+                                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
+                                        <h3 class="font-semibold text-purple-900 mb-4 flex items-center gap-2">
+                                            <span class="material-symbols-outlined">handshake</span>
+                                            PPA / OPEX Configuration
+                                        </h3>
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                    PPA Tariff
+                                                    <div class="relative inline-block tooltip-trigger">
+                                                        <span
+                                                            class="material-symbols-outlined text-gray-400 text-sm cursor-help align-middle">info</span>
+                                                        <div
+                                                            class="tooltip-content absolute left-6 top-0 w-56 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                            Rate you pay to the solar developer per unit of electricity
+                                                            generated.
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                <div class="relative">
+                                                    <span
+                                                        class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">₹</span>
+                                                    <input type="number" id="ppaTariff" min="2" max="8" step="0.1"
+                                                        value="4.50"
+                                                        class="w-full pl-8 pr-14 py-2.5 border border-gray-300 rounded-lg text-sm" />
+                                                    <span
+                                                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">/kWh</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                    Annual Escalation
+                                                </label>
+                                                <div class="relative">
+                                                    <input type="number" id="ppaEscalation" min="0" max="5" step="0.5"
+                                                        value="3"
+                                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm pr-8" />
+                                                    <span
+                                                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Advanced Settings Accordion -->
+                                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                                    <button type="button" onclick="toggleAdvancedSettings()"
+                                        class="w-full px-5 py-4 flex items-center justify-between bg-gray-50 hover:bg-gray-100 transition">
+                                        <span class="font-semibold text-gray-700 flex items-center gap-2">
+                                            <span class="material-symbols-outlined">tune</span>
+                                            Advanced Settings
+                                        </span>
+                                        <span class="material-symbols-outlined text-gray-400"
+                                            id="advancedIcon">expand_more</span>
+                                    </button>
+
+                                    <div id="advancedSettings" class="hidden p-5 border-t border-gray-200 space-y-4">
+                                        <!-- Operating Days -->
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Operating
+                                                Days/Year</label>
+                                            <input type="number" id="operatingDays" min="100" max="365" value="300"
+                                                class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm" />
+                                        </div>
+
+                                        <!-- Consumption Pattern -->
+                                        <div class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                    Captive Consumption
+                                                    <div class="relative inline-block tooltip-trigger">
+                                                        <span
+                                                            class="material-symbols-outlined text-gray-400 text-sm cursor-help align-middle">info</span>
+                                                        <div
+                                                            class="tooltip-content absolute left-6 top-0 w-56 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                            Percentage of solar power consumed on-site during generation
+                                                            hours.
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                                <div class="relative">
+                                                    <input type="number" id="captivePercent" min="0" max="100"
+                                                        value="80"
+                                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm pr-8" />
+                                                    <span
+                                                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                    Net Metering Export
+                                                </label>
+                                                <div class="relative">
+                                                    <input type="number" id="netMeteringPercent" min="0" max="100"
+                                                        value="20"
+                                                        class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm pr-8" />
+                                                    <span
+                                                        class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Financial Parameters (CAPEX only) -->
+                                        <div id="capexAdvanced">
+                                            <div class="grid grid-cols-2 gap-4">
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                        Tariff Escalation
+                                                        <div class="relative inline-block tooltip-trigger">
+                                                            <span
+                                                                class="material-symbols-outlined text-gray-400 text-sm cursor-help align-middle">info</span>
+                                                            <div
+                                                                class="tooltip-content absolute left-6 top-0 w-56 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                                Expected annual increase in grid electricity tariff.
+                                                                Historical average is 4-6%.
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                    <div class="relative">
+                                                        <input type="number" id="tariffEscalation" min="0" max="10"
+                                                            step="0.5" value="4"
+                                                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm pr-8" />
+                                                        <span
+                                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                        Discount Rate
+                                                        <div class="relative inline-block tooltip-trigger">
+                                                            <span
+                                                                class="material-symbols-outlined text-gray-400 text-sm cursor-help align-middle">info</span>
+                                                            <div
+                                                                class="tooltip-content absolute left-6 top-0 w-56 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                                Rate used to calculate NPV. Typically your cost of
+                                                                capital or expected return rate.
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                    <div class="relative">
+                                                        <input type="number" id="discountRate" min="5" max="20"
+                                                            step="0.5" value="10"
+                                                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm pr-8" />
+                                                        <span
+                                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="grid grid-cols-2 gap-4 mt-4">
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                        Custom EPC Cost
+                                                        <div class="relative inline-block tooltip-trigger">
+                                                            <span
+                                                                class="material-symbols-outlined text-gray-400 text-sm cursor-help align-middle">info</span>
+                                                            <div
+                                                                class="tooltip-content absolute left-6 top-0 w-56 bg-gray-900 text-white text-xs p-3 rounded-lg shadow-xl z-10">
+                                                                Leave empty to use default (₹48K/kW rooftop, ₹52K/kW
+                                                                ground). Enter if you have quotes.
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                    <div class="relative">
+                                                        <span
+                                                            class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">₹</span>
+                                                        <input type="number" id="customEpcCost" min="30000" max="80000"
+                                                            class="w-full pl-8 pr-14 py-2.5 border border-gray-300 rounded-lg text-sm"
+                                                            placeholder="Auto" />
+                                                        <span
+                                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">/kW</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                                                        O&M Cost
+                                                    </label>
+                                                    <div class="relative">
+                                                        <input type="number" id="customOmPercent" min="0.5" max="3"
+                                                            step="0.1" value="1"
+                                                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm pr-16" />
+                                                        <span
+                                                            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-sm">%
+                                                            CAPEX</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Stats Preview -->
+                                <div id="quickPreview"
+                                    class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
+                                    <h3 class="font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-primary">electric_bolt</span>
+                                        Quick Estimate
+                                    </h3>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                                            <div class="text-xs text-gray-500 mb-1">Est. System Size</div>
+                                            <div class="text-xl font-bold text-gray-900" id="previewCapacity">-- kW
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                                            <div class="text-xs text-gray-500 mb-1">Est. Annual Gen.</div>
+                                            <div class="text-xl font-bold text-gray-900" id="previewGeneration">-- kWh
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                                            <div class="text-xs text-gray-500 mb-1">Est. Investment</div>
+                                            <div class="text-xl font-bold text-primary" id="previewInvestment">₹ --
+                                            </div>
+                                        </div>
+                                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                                            <div class="text-xs text-gray-500 mb-1">Est. Annual Savings</div>
+                                            <div class="text-xl font-bold text-green-600" id="previewSavings">₹ --</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Calculate Button -->
+                                <button type="submit" id="calculateBtn"
+                                    class="w-full bg-primary hover:bg-blue-700 text-white text-lg font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined">calculate</span>
+                                    Calculate Solar Savings
+                                </button>
+
+                                <p class="text-center text-xs text-gray-500">
+                                    All calculations are estimates based on standard industry assumptions
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (Initially Hidden) -->
+        <section id="resultsSection" class="hidden py-8 lg:py-12 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="resultsContent">
+                    <!-- Results will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Assumptions Section -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold mb-8 text-center">Calculation Assumptions & Methodology</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Solar Generation -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-2xl text-yellow-500">wb_sunny</span>
+                            <h3 class="font-semibold">Solar Generation</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><strong>Irradiance:</strong> 4.0-6.0 kWh/m²/day (region-specific)</li>
+                            <li><strong>Performance Ratio:</strong> 78% (system efficiency)</li>
+                            <li><strong>Degradation:</strong> 2% Year 1, 0.5%/year thereafter</li>
+                            <li><strong>System Life:</strong> 25 years</li>
+                        </ul>
+                    </div>
+
+                    <!-- Financial Parameters -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-2xl text-green-500">payments</span>
+                            <h3 class="font-semibold">Financial Parameters</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><strong>EPC Cost:</strong> ₹48-52K/kW (installation type)</li>
+                            <li><strong>O&M Cost:</strong> 1% of CAPEX/year</li>
+                            <li><strong>Tariff Escalation:</strong> 4%/year</li>
+                            <li><strong>Discount Rate:</strong> 10% (for NPV)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Space Requirements -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-2xl text-blue-500">space_dashboard</span>
+                            <h3 class="font-semibold">Space Requirements</h3>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li><strong>Rooftop:</strong> ~100 sq.ft per kW</li>
+                            <li><strong>Ground-mounted:</strong> ~120 sq.ft per kW</li>
+                            <li><strong>Net Metering Limit:</strong> 500 kW (typical)</li>
+                            <li><strong>Panel Capacity:</strong> 540-550W modules</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Formulas -->
+                <div class="mt-8 bg-slate-800 text-white rounded-xl p-6">
+                    <h3 class="font-semibold mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined">function</span>
+                        Key Formulas Used
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-mono">
+                        <div class="bg-slate-700 rounded-lg p-3">
+                            <div class="text-blue-300 mb-1">System Capacity:</div>
+                            <code>kW = Annual_kWh / (Peak_Sun_Hours × 365 × PR)</code>
+                        </div>
+                        <div class="bg-slate-700 rounded-lg p-3">
+                            <div class="text-blue-300 mb-1">Annual Generation:</div>
+                            <code>kWh = kW × Peak_Sun_Hours × 365 × PR × Degradation</code>
+                        </div>
+                        <div class="bg-slate-700 rounded-lg p-3">
+                            <div class="text-blue-300 mb-1">NPV:</div>
+                            <code>NPV = -Investment + Σ(Cashflow_t / (1+r)^t)</code>
+                        </div>
+                        <div class="bg-slate-700 rounded-lg p-3">
+                            <div class="text-blue-300 mb-1">LCOE:</div>
+                            <code>LCOE = Total_Discounted_Cost / Total_Discounted_Energy</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-12 bg-gradient-to-r from-primary to-blue-700 text-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Go Solar?</h2>
+                <p class="text-lg text-blue-100 mb-6">
+                    Get a customized proposal from our C&I solar experts with detailed site assessment
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact"
+                        class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Request Site Survey
+                    </a>
+                    <a href="tel:+919876543210"
+                        class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/10 transition flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined">call</span>
+                        Call Now
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 SolarForce. All rights reserved.</p>
+            <div class="mt-4 flex justify-center gap-6 text-sm">
+                <a href="/legal/privacy-policy" class="hover:text-white">Privacy Policy</a>
+                <a href="/legal/terms-of-use" class="hover:text-white">Terms of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lead Capture Modal -->
+    <div id="leadModal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Get Detailed Proposal</h3>
+                    <button onclick="closeLeadModal()" class="text-gray-400 hover:text-gray-600">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <p class="text-sm text-gray-600 mt-1">Our experts will prepare a customized proposal within 24 hours</p>
+            </div>
+            <form id="leadForm" class="p-6 space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                        <input type="text" id="leadName" required class="w-full px-3 py-2 border rounded-lg"
+                            placeholder="Your name" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                        <input type="text" id="leadCompany" class="w-full px-3 py-2 border rounded-lg"
+                            placeholder="Company" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+                        <input type="tel" id="leadPhone" required pattern="[0-9]{10}"
+                            class="w-full px-3 py-2 border rounded-lg" placeholder="10-digit mobile" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" id="leadEmail" required class="w-full px-3 py-2 border rounded-lg"
+                            placeholder="email@company.com" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Additional Requirements</label>
+                    <textarea id="leadMessage" rows="2" class="w-full px-3 py-2 border rounded-lg"
+                        placeholder="Any specific requirements..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Calculator JavaScript -->
+    <script src="/js/ci-calculator.js"></script>
+</body>
+
+</html>

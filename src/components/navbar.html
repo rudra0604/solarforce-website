@@ -1,0 +1,204 @@
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            <a href="/" class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+                <img src="/img/logo/logo.svg" alt="SolarForce" class="h-16 w-auto">
+                <span class="text-2xl font-bold text-black">SolarForce</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 items-center h-full">
+                <a id="nav-home" class="nav-link font-medium text-sm transition-colors duration-200" href="/">Home</a>
+                <div class="relative group h-full flex items-center">
+                    <button id="nav-offers"
+                        class="nav-dropdown text-secondary group-hover:text-primary font-medium text-sm flex items-center gap-1 h-full transition-colors duration-200">
+                        Offers <span
+                            class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-b-lg overflow-hidden hidden group-hover:block">
+                        <a class="block px-4 py-3 text-sm text-secondary hover:bg-blue-50 hover:text-primary border-b border-gray-50 transition-colors"
+                            href="/homes" data-parent="offers">Residential</a>
+                        <a class="block px-4 py-3 text-sm text-secondary hover:bg-blue-50 hover:text-primary border-b border-gray-50 transition-colors"
+                            href="/housing-society" data-parent="offers">Housing Society</a>
+                        <a class="block px-4 py-3 text-sm text-secondary hover:bg-blue-50 hover:text-primary transition-colors"
+                            href="/commercial" data-parent="offers">Commercial</a>
+                    </div>
+                </div>
+                <div class="relative group h-full flex items-center">
+                    <button id="nav-solutions"
+                        class="nav-dropdown text-secondary group-hover:text-primary font-medium text-sm flex items-center gap-1 h-full transition-colors duration-200">
+                        Solutions <span
+                            class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white border border-gray-100 shadow-xl rounded-b-lg overflow-hidden hidden group-hover:block">
+                        <a class="block px-4 py-3 text-sm text-secondary hover:bg-blue-50 hover:text-primary border-b border-gray-50 transition-colors"
+                            href="/on-grid-solar-system" data-parent="solutions">On-Grid Solar</a>
+                        <a class="block px-4 py-3 text-sm text-secondary hover:bg-blue-50 hover:text-primary border-b border-gray-50 transition-colors"
+                            href="/off-grid-solar-system" data-parent="solutions">Off-Grid Solar</a>
+                        <a class="block px-4 py-3 text-sm text-secondary hover:bg-blue-50 hover:text-primary transition-colors"
+                            href="/hybrid-solar-system" data-parent="solutions">Hybrid Solar</a>
+                    </div>
+                </div>
+                <div class="relative group h-full flex items-center">
+                    <button id="nav-locations"
+                        class="nav-dropdown text-secondary group-hover:text-primary font-medium text-sm flex items-center gap-1 h-full transition-colors duration-200">
+                        Locations <span
+                            class="material-symbols-outlined text-[18px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-56 bg-white border border-gray-100 shadow-xl rounded-b-lg overflow-hidden hidden group-hover:block">
+                        <div class="px-4 py-2 bg-gray-50 border-b border-gray-100">
+                            <span class="text-xs font-bold text-gray-500 uppercase">Delhi NCR</span>
+                        </div>
+                        <a class="block px-4 py-2 text-sm text-secondary hover:bg-blue-50 hover:text-primary transition-colors"
+                            href="/rooftop-solar-in-delhi" data-parent="locations">New Delhi</a>
+                        <a class="block px-4 py-2 text-sm text-secondary hover:bg-blue-50 hover:text-primary border-b border-gray-50 transition-colors"
+                            href="/rooftop-solar-in-gurugram" data-parent="locations">Haryana</a>
+                        <div class="px-4 py-2 bg-gray-50 border-b border-gray-100">
+                            <span class="text-xs font-bold text-gray-500 uppercase">Madhya Pradesh</span>
+                        </div>
+                        <a class="block px-4 py-2 text-sm text-secondary hover:bg-blue-50 hover:text-primary transition-colors"
+                            href="/rooftop-solar-in-gwalior" data-parent="locations">Gwalior</a>
+                        <a class="block px-4 py-2 text-sm text-secondary hover:bg-blue-50 hover:text-primary transition-colors"
+                            href="/rooftop-solar-in-indore" data-parent="locations">Indore</a>
+                        <a class="block px-4 py-2 text-sm text-secondary hover:bg-blue-50 hover:text-primary transition-colors"
+                            href="/rooftop-solar-in-bhind" data-parent="locations">Bhind</a>
+                    </div>
+                </div>
+                <a id="nav-about"
+                    class="nav-link text-secondary hover:text-primary font-medium text-sm transition-colors duration-200"
+                    href="/about-us">About</a>
+                <a id="nav-calculator"
+                    class="nav-link text-secondary hover:text-primary font-medium text-sm transition-colors duration-200"
+                    href="/calculator">Calculator</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="/go-solar"
+                    class="hidden sm:flex bg-primary hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20 transition-all transform hover:-translate-y-0.5">
+                    Talk to Energy Tech
+                </a>
+                <button class="md:hidden text-secondary" id="mobile-menu-btn">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+        <div class="px-4 py-4 space-y-3">
+            <a href="/" class="block py-2 text-primary font-medium">Home</a>
+            <div class="border-t border-gray-100 pt-3">
+                <span class="text-xs font-bold text-gray-500 uppercase">Offers</span>
+                <a href="/homes" class="block py-2 text-secondary hover:text-primary">Residential</a>
+                <a href="/housing-society" class="block py-2 text-secondary hover:text-primary">Housing Society</a>
+                <a href="/commercial" class="block py-2 text-secondary hover:text-primary">Commercial</a>
+            </div>
+            <div class="border-t border-gray-100 pt-3">
+                <span class="text-xs font-bold text-gray-500 uppercase">Solutions</span>
+                <a href="/on-grid-solar-system" class="block py-2 text-secondary hover:text-primary">On-Grid Solar</a>
+                <a href="/off-grid-solar-system" class="block py-2 text-secondary hover:text-primary">Off-Grid Solar</a>
+                <a href="/hybrid-solar-system" class="block py-2 text-secondary hover:text-primary">Hybrid Solar</a>
+            </div>
+            <div class="border-t border-gray-100 pt-3">
+                <span class="text-xs font-bold text-gray-500 uppercase">Locations</span>
+                <a href="/rooftop-solar-in-delhi" class="block py-2 text-secondary hover:text-primary">New Delhi</a>
+                <a href="/rooftop-solar-in-gurugram" class="block py-2 text-secondary hover:text-primary">Gurugram</a>
+                <a href="/rooftop-solar-in-gwalior" class="block py-2 text-secondary hover:text-primary">Gwalior</a>
+                <a href="/rooftop-solar-in-indore" class="block py-2 text-secondary hover:text-primary">Indore</a>
+            </div>
+            <div class="border-t border-gray-100 pt-3">
+                <a href="/about-us" class="block py-2 text-secondary hover:text-primary">About Us</a>
+                <a href="/calculator" class="block py-2 text-secondary hover:text-primary">Calculator</a>
+                <a href="/contact" class="block py-2 text-secondary hover:text-primary">Contact</a>
+            </div>
+            <a href="/go-solar"
+                class="block w-full text-center bg-primary hover:bg-blue-700 text-white py-3 rounded-lg font-bold mt-4">
+                Get Free Quote
+            </a>
+        </div>
+    </div>
+</header>
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Active navigation highlighting
+    (function () {
+        const currentPath = window.location.pathname;
+
+        // Reset all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('text-primary');
+            link.classList.add('text-secondary');
+        });
+
+        document.querySelectorAll('.nav-dropdown').forEach(btn => {
+            btn.classList.remove('text-primary');
+            btn.classList.add('text-secondary');
+        });
+
+        // Check exact match first
+        if (currentPath === '/') {
+            const homeLink = document.getElementById('nav-home');
+            if (homeLink) {
+                homeLink.classList.remove('text-secondary');
+                homeLink.classList.add('text-primary');
+            }
+        } else if (currentPath === '/about-us') {
+            const aboutLink = document.getElementById('nav-about');
+            if (aboutLink) {
+                aboutLink.classList.remove('text-secondary');
+                aboutLink.classList.add('text-primary');
+            }
+        } else if (currentPath === '/calculator') {
+            const calcLink = document.getElementById('nav-calculator');
+            if (calcLink) {
+                calcLink.classList.remove('text-secondary');
+                calcLink.classList.add('text-primary');
+            }
+        } else {
+            // Check dropdown items
+            const dropdownLinks = document.querySelectorAll('[data-parent]');
+            let foundMatch = false;
+
+            dropdownLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPath) {
+                    const parent = link.getAttribute('data-parent');
+                    const parentBtn = document.getElementById('nav-' + parent);
+                    if (parentBtn) {
+                        parentBtn.classList.remove('text-secondary');
+                        parentBtn.classList.add('text-primary');
+                        foundMatch = true;
+                    }
+                }
+            });
+
+            // Fallback: check if path contains certain keywords
+            if (!foundMatch) {
+                if (currentPath.includes('/homes') || currentPath.includes('/housing-society') ||
+                    currentPath.includes('/commercial') || currentPath.includes('/offer/')) {
+                    const offersBtn = document.getElementById('nav-offers');
+                    if (offersBtn) {
+                        offersBtn.classList.remove('text-secondary');
+                        offersBtn.classList.add('text-primary');
+                    }
+                } else if (currentPath.includes('/solutions/')) {
+                    const solutionsBtn = document.getElementById('nav-solutions');
+                    if (solutionsBtn) {
+                        solutionsBtn.classList.remove('text-secondary');
+                        solutionsBtn.classList.add('text-primary');
+                    }
+                } else if (currentPath.includes('/rooftop-solar-in-')) {
+                    const locationsBtn = document.getElementById('nav-locations');
+                    if (locationsBtn) {
+                        locationsBtn.classList.remove('text-secondary');
+                        locationsBtn.classList.add('text-primary');
+                    }
+                }
+            }
+        }
+    })();
+</script>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Go Solar - Get a Free Quote | SolarForce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { "primary": "#0052CC" },
+                    fontFamily: { "display": ["Inter", "sans-serif"] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-secondary antialiased overflow-x-hidden">
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-black mb-4">Get Your Free Solar Quote</h1>
+            <p class="text-slate-600">Fill out the form below and our team will contact you within 24 hours with a
+                customized proposal.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+            <form id="quoteForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Full Name *</label>
+                        <input type="text" name="name" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="Your name" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Phone Number *</label>
+                        <input type="tel" name="phone" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="+91" />
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Email Address</label>
+                        <input type="email" name="email" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="you@email.com" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">City *</label>
+                        <select name="city" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="">Select City</option>
+                            <option value="delhi">New Delhi</option>
+                            <option value="gurugram">Gurugram</option>
+                            <option value="noida">Noida</option>
+                            <option value="gwalior">Gwalior</option>
+                            <option value="indore">Indore</option>
+                            <option value="bhind">Bhind</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Pincode *</label>
+                        <input type="text" name="pincode" required pattern="[0-9]{6}" maxlength="6"
+                            class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="e.g., 110001" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2">Rooftop Area (sq ft)</label>
+                        <input type="number" name="rooftopArea" required
+                            class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent"
+                            placeholder="e.g., 500" />
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Customer Type *</label>
+                    <div class="grid grid-cols-3 gap-4">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="customerType" value="residential" class="peer sr-only" checked />
+                            <div
+                                class="text-center py-3 px-4 rounded-lg border border-slate-200 peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary font-medium transition-all">
+                                Residential
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="customerType" value="commercial" class="peer sr-only" />
+                            <div
+                                class="text-center py-3 px-4 rounded-lg border border-slate-200 peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary font-medium transition-all">
+                                Commercial
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="customerType" value="society" class="peer sr-only" />
+                            <div
+                                class="text-center py-3 px-4 rounded-lg border border-slate-200 peer-checked:border-primary peer-checked:bg-primary/5 peer-checked:text-primary font-medium transition-all">
+                                Housing Society
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Monthly Electricity Bill (₹)</label>
+                    <input type="number" name="monthlyBill"
+                        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent"
+                        placeholder="e.g., 3500" />
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2">Message / Additional Details</label>
+                    <textarea name="message" rows="4"
+                        class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                        placeholder="Any specific requirements or questions? (optional)"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-primary hover:bg-blue-700 text-white py-4 rounded-lg font-bold text-lg transition-colors">
+                    Get Free Quote
+                </button>
+            </form>
+
+            <div id="formSuccess" class="hidden text-center py-8">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="material-symbols-outlined text-green-600 text-3xl">check_circle</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Thank You!</h3>
+                <p class="text-slate-600">Our team will contact you within 24 hours with your customized solar proposal.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            data.sourcePage = '/go-solar';
+
+            // Disable button while submitting
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                const response = await fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    // Redirect to thank you page
+                    window.location.href = '/thank-you';
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Free Quote';
+                alert('Something went wrong. Please try again or call us directly.');
+            }
+        });
+
+        // Auto-fill form from URL parameters (when coming from home page)
+        (function () {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // Prefill name
+            if (urlParams.get('name')) {
+                document.querySelector('input[name="name"]').value = urlParams.get('name');
+            }
+
+            // Prefill phone
+            if (urlParams.get('phone')) {
+                document.querySelector('input[name="phone"]').value = urlParams.get('phone');
+            }
+
+            // Prefill pincode and try to detect city
+            if (urlParams.get('pincode')) {
+                const pincode = urlParams.get('pincode');
+                document.querySelector('input[name="pincode"]').value = pincode;
+
+                // Auto-select city based on pincode
+                const pincodeToCity = {
+                    // Delhi
+                    '110': 'delhi',
+                    // Gurugram
+                    '122': 'gurugram',
+                    // Noida
+                    '201': 'noida',
+                    // Gwalior
+                    '474': 'gwalior',
+                    // Indore
+                    '452': 'indore',
+                    // Bhind
+                    '477': 'bhind',
+                    // Bhopal
+                    '462': 'bhopal',
+                };
+
+                const prefix = pincode.substring(0, 3);
+                if (pincodeToCity[prefix]) {
+                    const citySelect = document.querySelector('select[name="city"]');
+                    const cityValue = pincodeToCity[prefix];
+                    // Check if option exists
+                    const option = citySelect.querySelector(`option[value="${cityValue}"]`);
+                    if (option) {
+                        citySelect.value = cityValue;
+                    }
+                }
+            }
+
+            // Prefill customer type
+            if (urlParams.get('customerType')) {
+                const customerType = urlParams.get('customerType');
+                const radioBtn = document.querySelector(`input[name="customerType"][value="${customerType}"]`);
+                if (radioBtn) {
+                    radioBtn.checked = true;
+                }
+            }
+
+            // If we have prefilled data, scroll to the form and focus on next empty field
+            if (urlParams.toString()) {
+                // Find first empty required field to focus
+                const form = document.getElementById('quoteForm');
+                const requiredInputs = form.querySelectorAll('input[required], select[required]');
+                for (const input of requiredInputs) {
+                    if (!input.value) {
+                        setTimeout(() => input.focus(), 100);
+                        break;
+                    }
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

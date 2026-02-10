@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>On-Grid Solar Solutions - SolarForce</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0052CC", // Brand Blue updated from #359EFF
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                        "tech-blue": "#0f4c81"
+                    },
+                    fontFamily: {
+                        display: "Inter"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#111813] dark:text-white font-display overflow-x-hidden">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+
+        <!-- Hero Section - Full Screen -->
+        <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-cover bg-center bg-no-repeat"
+                    data-alt="Modern suburban home with solar panels on the roof under a clear blue sky"
+                    style='background-image: url("https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1920&auto=format&fit=crop");'>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70"></div>
+            </div>
+
+            <div class="absolute top-6 right-6 z-20">
+                <div
+                    class="bg-primary/90 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-bold uppercase border border-white/30 shadow-lg">
+                    Most Popular
+                </div>
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="max-w-4xl">
+                    <h1
+                        class="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+                        Power Your Home &amp; <span class="text-cyan-400">Earn from the Grid</span>
+                    </h1>
+                    <p class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed mb-8">
+                        Save up to 90% on electricity bills with our advanced On-Grid Solar Systems. Seamlessly switch
+                        to green energy today.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="/go-solar"
+                            class="flex h-14 px-8 items-center justify-center rounded-xl bg-primary hover:bg-blue-700 transition-all text-white text-base font-bold shadow-xl shadow-primary/30 hover:scale-105">
+                            Get a Free Quote
+                        </a>
+                        <!--   <button
+                            class="flex h-14 px-8 items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md border-2 border-white/30 text-white text-base font-bold transition-all">
+                            View Projects
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Stats Bar -->
+        <div class="w-full bg-white border-b border-gray-200 py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-black text-primary mb-2">25,000+</div>
+                        <div class="text-sm text-gray-600 font-medium">Homes Powered</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-black text-primary mb-2">250+</div>
+                        <div class="text-sm text-gray-600 font-medium">Housing Societies</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-black text-primary mb-2">4.8/5</div>
+                        <div class="text-sm text-gray-600 font-medium">Customer Rating</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-black text-primary mb-2">7,000+</div>
+                        <div class="text-sm text-gray-600 font-medium">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="w-full bg-white py-12">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[960px] flex flex-col items-center">
+                        <div class="mb-8 text-center">
+                            <span
+                                class="text-tech-blue text-sm font-bold uppercase tracking-wider mb-2 block">Government
+                                Incentive</span>
+                            <h2 class="text-[#111813] text-3xl font-bold leading-tight tracking-[-0.015em]">PM Surya
+                                Ghar Muft Bijli Yojana</h2>
+                            <p class="text-gray-500 mt-2">Reduce your initial investment with direct government
+                                subsidies transferred to your bank account.</p>
+                        </div>
+                        <div
+                            class="w-full border border-[#dbe6df] rounded-xl overflow-hidden shadow-sm bg-background-light">
+                            <table class="w-full min-w-[600px]">
+                                <thead class="bg-[#f0f5f1] border-b border-[#dbe6df]">
+                                    <tr>
+                                        <th
+                                            class="px-6 py-4 text-left text-[#111813] text-sm font-bold uppercase tracking-wider">
+                                            System Capacity</th>
+                                        <th
+                                            class="px-6 py-4 text-right text-[#111813] text-sm font-bold uppercase tracking-wider">
+                                            Subsidy Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-[#dbe6df] bg-white hover:bg-gray-50 transition-colors">
+                                        <td class="px-6 py-4 text-[#111813] font-medium">1 kW System</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <span
+                                                class="inline-flex items-center justify-center px-4 py-1 rounded-full bg-primary/10 text-primary font-bold">₹30,000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-[#dbe6df] bg-white hover:bg-gray-50 transition-colors">
+                                        <td class="px-6 py-4 text-[#111813] font-medium">2 kW System</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <span
+                                                class="inline-flex items-center justify-center px-4 py-1 rounded-full bg-primary/10 text-primary font-bold">₹60,000</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="bg-white hover:bg-gray-50 transition-colors">
+                                        <td class="px-6 py-4 text-[#111813] font-bold text-lg">3 kW &amp; above</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <span
+                                                class="inline-flex items-center justify-center px-4 py-1 rounded-full bg-primary text-white font-bold shadow-sm">₹78,000</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-4 text-xs text-gray-400 w-full text-right">*Subsidy amounts subject to government
+                            approval and policy changes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What is On-Grid Section -->
+            <div class="w-full bg-white py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-3xl font-bold mb-4">What is an On-Grid Solar System?</h2>
+                            <p class="text-gray-600 text-base max-w-3xl mx-auto">An on-grid or grid-tied solar system is
+                                directly connected to your local electricity grid. It allows you to consume solar power
+                                during the day and export excess energy back to the grid for credits.</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                                    <h3 class="text-xl font-bold mb-6 text-[#111813]">Key Components</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start gap-4">
+                                            <div class="size-10 flex items-center justify-center flex-shrink-0">
+                                                <span class="material-symbols-outlined text-primary">solar_power</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-[#111813] mb-1">Solar Panels</h4>
+                                                <p class="text-sm text-gray-600">Convert sunlight into DC electricity
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-4">
+                                            <div class="size-10 flex items-center justify-center flex-shrink-0">
+                                                <span
+                                                    class="material-symbols-outlined text-primary">electric_bolt</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-[#111813] mb-1">Grid-Tie Inverter</h4>
+                                                <p class="text-sm text-gray-600">Converts DC to AC and syncs with grid
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-4">
+                                            <div class="size-10 flex items-center justify-center flex-shrink-0">
+                                                <span class="material-symbols-outlined text-primary">construction</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-[#111813] mb-1">Mounting Structure</h4>
+                                                <p class="text-sm text-gray-600">Secures panels to your rooftop</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-4">
+                                            <div class="size-10 flex items-center justify-center flex-shrink-0">
+                                                <span class="material-symbols-outlined text-primary">speed</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-[#111813] mb-1">Bi-Directional Meter</h4>
+                                                <p class="text-sm text-gray-600">Tracks import and export of electricity
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-4">
+                                            <div class="size-10 flex items-center justify-center flex-shrink-0">
+                                                <span class="material-symbols-outlined text-primary">cable</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-[#111813] mb-1">Cables & Accessories</h4>
+                                                <p class="text-sm text-gray-600">All wiring and safety equipment</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600"
+                                    alt="On-Grid Solar System Diagram" class="rounded-lg shadow-md w-full" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works Section -->
+            <div class="w-full bg-background-light py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-3xl font-bold mb-4">How On-Grid Solar Systems Work</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto">A seamless 6-step process that powers your home
+                                while earning you credits from excess generation.</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="text-primary font-black text-lg mb-3">Step 1</div>
+                                <h3 class="font-bold text-lg mb-2">Solar Capture</h3>
+                                <p class="text-sm text-gray-600">Solar panels absorb sunlight and generate DC
+                                    electricity
+                                    throughout the day.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="text-primary font-black text-lg mb-3">Step 2</div>
+                                <h3 class="font-bold text-lg mb-2">DC to AC Conversion</h3>
+                                <p class="text-sm text-gray-600">Inverter converts DC electricity to AC power usable by
+                                    home appliances.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="text-primary font-black text-lg mb-3">Step 3</div>
+                                <h3 class="font-bold text-lg mb-2">Power Your Home</h3>
+                                <p class="text-sm text-gray-600">Solar AC power is used first to run all your appliances
+                                    and lights.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="text-primary font-black text-lg mb-3">Step 4</div>
+                                <h3 class="font-bold text-lg mb-2">Export Surplus</h3>
+                                <p class="text-sm text-gray-600">Excess energy is automatically sent to the grid via net
+                                    metering.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="text-primary font-black text-lg mb-3">Step 5</div>
+                                <h3 class="font-bold text-lg mb-2">Earn Credits</h3>
+                                <p class="text-sm text-gray-600">Bi-directional meter records exported units as credits
+                                    on
+                                    your bill.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="text-primary font-black text-lg mb-3">Step 6</div>
+                                <h3 class="font-bold text-lg mb-2">Use Credits at Night</h3>
+                                <p class="text-sm text-gray-600">At night, draw grid power and offset it with your
+                                    accumulated credits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full bg-background-light py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                            <div>
+                                <h2 class="text-[#111813] text-3xl font-bold leading-tight">System Components</h2>
+                                <p class="text-gray-500 mt-2">Premium hardware engineered for 25+ years of performance.
+                                </p>
+                            </div>
+                            <a class="text-tech-blue font-bold hover:underline flex items-center gap-1" href="#">
+                                Download Spec Sheet <span class="material-symbols-outlined text-sm">download</span>
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div
+                                class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div
+                                    class="size-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                    <span
+                                        class="material-symbols-outlined text-tech-blue group-hover:text-primary">grid_view</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Solar Panels</h3>
+                                <p class="text-sm text-gray-600">High-efficiency Monocrystalline PERC half-cut cells.
+                                    Shade tolerant design.</p>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div
+                                    class="size-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                    <span
+                                        class="material-symbols-outlined text-tech-blue group-hover:text-primary">electric_meter</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Smart Inverter</h3>
+                                <p class="text-sm text-gray-600">Grid-tie inverter with 98.6% efficiency. Real-time
+                                    monitoring via mobile app.</p>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div
+                                    class="size-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                    <span
+                                        class="material-symbols-outlined text-tech-blue group-hover:text-primary">foundation</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Mounting Structure</h3>
+                                <p class="text-sm text-gray-600">Hot-dipped galvanized steel. Elevated design for better
+                                    cooling and airflow.</p>
+                            </div>
+                            <div
+                                class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div
+                                    class="size-12 bg-blue-50 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                                    <span
+                                        class="material-symbols-outlined text-tech-blue group-hover:text-primary">compare_arrows</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Net Meter</h3>
+                                <p class="text-sm text-gray-600">Bi-directional meter that tracks both import from grid
+                                    and export to grid.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-white py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-3xl font-bold mb-4">How Net Metering Works</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto">Your solar system works in harmony with the grid.
+                                Use your own power first, export the excess, and draw back when needed.</p>
+                        </div>
+                        <div class="relative flex flex-col lg:flex-row justify-between items-center gap-8 py-8">
+                            <div class="hidden lg:block absolute top-1/2 left-0 w-full h-[2px] bg-gray-200 -z-10"></div>
+                            <div class="flex flex-col items-center text-center bg-white p-4 max-w-[240px]">
+                                <div
+                                    class="size-20 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center mb-4 shadow-sm border-4 border-white">
+                                    <span class="material-symbols-outlined text-4xl icon-filled">sunny</span>
+                                </div>
+                                <h4 class="font-bold text-lg">1. Generate</h4>
+                                <p class="text-sm text-gray-500 mt-1">Solar panels convert sunlight into DC electricity.
+                                </p>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-gray-300 lg:rotate-0 rotate-90">arrow_forward</span>
+                            <div class="flex flex-col items-center text-center bg-white p-4 max-w-[240px]">
+                                <div
+                                    class="size-20 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-4 shadow-sm border-4 border-white">
+                                    <span class="material-symbols-outlined text-4xl">home</span>
+                                </div>
+                                <h4 class="font-bold text-lg">2. Consume</h4>
+                                <p class="text-sm text-gray-500 mt-1">Your home uses solar power instantly for
+                                    appliances.</p>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-gray-300 lg:rotate-0 rotate-90">arrow_forward</span>
+                            <div class="flex flex-col items-center text-center bg-white p-4 max-w-[240px]">
+                                <div
+                                    class="size-20 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4 shadow-sm border-4 border-white">
+                                    <span class="material-symbols-outlined text-4xl">upload</span>
+                                </div>
+                                <h4 class="font-bold text-lg">3. Export</h4>
+                                <p class="text-sm text-gray-500 mt-1">Excess energy is sent to the grid, earning you
+                                    credits.</p>
+                            </div>
+                            <span
+                                class="material-symbols-outlined text-gray-300 lg:rotate-0 rotate-90">arrow_forward</span>
+                            <div class="flex flex-col items-center text-center bg-white p-4 max-w-[240px]">
+                                <div
+                                    class="size-20 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center mb-4 shadow-sm border-4 border-white">
+                                    <span class="material-symbols-outlined text-4xl">download</span>
+                                </div>
+                                <h4 class="font-bold text-lg">4. Import</h4>
+                                <p class="text-sm text-gray-500 mt-1">At night, draw power from the grid using your
+                                    credits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full bg-[#0B1121] py-16 lg:py-24 text-white overflow-hidden relative">
+                <div
+                    class="absolute -right-20 -top-20 size-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none">
+                </div>
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center relative z-10">
+                    <div class="w-full max-w-[1200px] flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center gap-2 text-blue-400 font-bold mb-4">
+                                <span class="material-symbols-outlined">verified_user</span>
+                                <span class="uppercase tracking-wider text-sm">Exclusive Technology</span>
+                            </div>
+                            <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Intelligent WindPro Mount™
+                            </h2>
+                            <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+                                Engineered for extreme weather. While standard mounts fail at high wind speeds, our
+                                patented aerodynamic design withstands cyclones up to <span
+                                    class="text-white font-bold">180 km/h</span>.
+                            </p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-blue-400 mt-0.5">check_circle</span>
+                                    <span class="text-gray-200">Rust-proof Aluminium Alloy 6063-T6</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-blue-400 mt-0.5">check_circle</span>
+                                    <span class="text-gray-200">Zero-drill installation protects roof integrity</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-blue-400 mt-0.5">check_circle</span>
+                                    <span class="text-gray-200">Lifetime structural warranty</span>
+                                </li>
+                            </ul>
+                            <!--  <button
+                                class="flex items-center gap-2 text-blue-400 font-bold hover:text-white transition-colors">
+                                See Tech Specs <span class="material-symbols-outlined">arrow_forward</span>
+                            </button> -->
+                        </div>
+                        <div class="lg:w-1/2">
+                            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-white/5 backdrop-blur-sm"
+                                data-alt="Technical blueprint render of the WindPro solar panel mounting structure showing aerodynamic airflow">
+                                <img alt="WindPro Mount Technology"
+                                    class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB3WZGIc7-7ckyrz-h0bIL-Yqwx2xwQYJGtxBz1sSG7fY6ah9p82FPl6OKGXvUDGRAJE-zJmluhKMO6I4m1Ix_gSOzHYcGIn6LYrTPLff8J1UPpM0u0cwEP-d45hKor_u-ekAO_luGkIHv-yQXxK52BNt-dWqqA__L3tBojEW_XOmwqq2FNMQxdYkKpSBpndISQoc4NfXFLe6svrabpwQj0sEw4lJu1Y56ht5L6XG8NHqwg3OZp6XgXFNYmmbR4q4wERgs-Koav5k" />
+                                <div
+                                    class="p-4 border-t border-white/10 flex justify-between items-center bg-[#162032]">
+                                    <div class="text-xs text-gray-400">Wind Tunnel Tested</div>
+                                    <div class="text-xs font-mono text-blue-400">Status: CERTIFIED</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advantages & Disadvantages -->
+            <div class="w-full bg-white py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-3xl font-bold mb-4">Pros & Cons of On-Grid Solar</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto">Understanding both sides helps you make an
+                                informed decision</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Advantages -->
+                            <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <span class="material-symbols-outlined text-primary text-3xl">check_circle</span>
+                                    <h3 class="text-xl font-bold text-[#111813]">Advantages</h3>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">Simple Billing:</strong>
+                                            <span class="text-gray-600"> One consolidated bill with credits</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">Rapid Payback:</strong>
+                                            <span class="text-gray-600"> ROI in just 3-5 years</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">No Battery Costs:</strong>
+                                            <span class="text-gray-600"> Significantly lower investment</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">Most Affordable:</strong>
+                                            <span class="text-gray-600"> Lowest cost per watt among all types</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">Subsidy Eligible:</strong>
+                                            <span class="text-gray-600"> Up to ₹78,000 government subsidy</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Disadvantages -->
+                            <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <span class="material-symbols-outlined text-gray-600 text-3xl">info</span>
+                                    <h3 class="text-xl font-bold text-[#111813]">Considerations</h3>
+                                </div>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">Grid Dependency:</strong>
+                                            <span class="text-gray-600"> No power during grid outages due to
+                                                anti-islanding protection</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 text-[20px] mt-0.5">chevron_right</span>
+                                        <div>
+                                            <strong class="text-[#111813]">Solution:</strong>
+                                            <span class="text-gray-600"> Consider hybrid system if backup is
+                                                critical</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROI Calculator Section -->
+            <div class="w-full bg-primary py-16 text-white">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-3xl font-bold mb-4">Return on Investment</h2>
+                            <p class="text-white/80 text-base max-w-2xl mx-auto">A 3kW system can save you ₹16.58 lakhs
+                                over 25 years</p>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="bg-white/10 p-8 rounded-lg border border-white/20">
+                                <div class="text-4xl font-bold mb-2">3-5</div>
+                                <div class="text-base font-medium">Years Payback</div>
+                                <p class="text-sm text-white/70 mt-3">Recover your investment through electricity
+                                    savings</p>
+                            </div>
+                            <div class="bg-white/10 p-8 rounded-lg border border-white/20">
+                                <div class="text-4xl font-bold mb-2">25+</div>
+                                <div class="text-base font-medium">Years Lifetime</div>
+                                <p class="text-sm text-white/70 mt-3">Premium panels with performance warranty</p>
+                            </div>
+                            <div class="bg-white/10 p-8 rounded-lg border border-white/20">
+                                <div class="text-4xl font-bold mb-2">90%</div>
+                                <div class="text-base font-medium">Bill Reduction</div>
+                                <p class="text-sm text-white/70 mt-3">Drastically cut your monthly electricity costs</p>
+                            </div>
+                        </div>
+                        <div class="mt-12 bg-white/10 p-8 rounded-lg border border-white/20">
+                            <h3 class="text-xl font-bold mb-6">Example: 3kW System Savings</h3>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                            <span class="text-blue-100">System Cost:</span>
+                                            <span class="font-bold">₹1,65,000</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                            <span class="text-blue-100">Subsidy:</span>
+                                            <span class="font-bold text-green-300">-₹78,000</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                            <span class="text-blue-100">Effective Cost:</span>
+                                            <span class="font-bold text-xl">₹87,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                            <span class="text-blue-100">Annual Savings:</span>
+                                            <span class="font-bold">₹30,000</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                            <span class="text-blue-100">Payback Period:</span>
+                                            <span class="font-bold">2.9 years</span>
+                                        </div>
+                                        <div class="flex justify-between items-center pb-2 border-b border-white/20">
+                                            <span class="text-blue-100">25-Year Savings:</span>
+                                            <span class="font-bold text-xl text-green-300">₹16,58,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Table -->
+            <div class="w-full bg-background-light py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1400px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-4xl font-bold mb-4">Transparent Pricing Across India</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto">All-inclusive pricing with installation, net
+                                metering, and warranty</p>
+                        </div>
+                        <!-- Before Subsidy Pricing -->
+                        <div class="mb-8">
+                            <div class="bg-white p-4 rounded-t-xl border-b-2 border-gray-300">
+                                <h3 class="text-xl font-bold text-[#111813] text-center">Before Government Subsidy</h3>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full bg-white shadow-lg border border-gray-200">
+                                    <thead class="bg-gradient-to-r from-gray-600 to-gray-700 text-white">
+                                        <tr>
+                                            <th class="px-6 py-4 text-left font-bold">City</th>
+                                            <th class="px-6 py-4 text-center font-bold">2kW</th>
+                                            <th class="px-6 py-4 text-center font-bold">3kW</th>
+                                            <th class="px-6 py-4 text-center font-bold">4kW</th>
+                                            <th class="px-6 py-4 text-center font-bold">5kW</th>
+                                            <th class="px-6 py-4 text-center font-bold">10kW</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr class="hover:bg-gray-50 transition-colors">
+                                            <td class="px-6 py-4 font-bold text-[#111813]">Delhi</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹1,90,000</td>
+                                            <td class="px-6 py-4 text-center font-bold text-gray-700">₹2,20,000</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹2,70,000</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹3,15,000</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹5,90,000</td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-50 transition-colors">
+                                            <td class="px-6 py-4 font-bold text-[#111813]">Bhopal</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹1,80,000</td>
+                                            <td class="px-6 py-4 text-center font-bold text-gray-700">₹2,10,000</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹2,55,000</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹3,10,000</td>
+                                            <td class="px-6 py-4 text-center text-gray-600">₹5,80,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- After Subsidy Pricing -->
+                        <div class="mb-8">
+                            <div
+                                class="bg-gradient-to-r from-green-600 to-green-700 p-4 rounded-t-xl border-b-2 border-green-800">
+                                <h3
+                                    class="text-xl font-bold text-white text-center flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined">savings</span>
+                                    After Government Subsidy (Best Value!)
+                                </h3>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full bg-white rounded-b-xl shadow-lg border border-gray-200">
+                                    <thead class="bg-gradient-to-r from-primary to-blue-700 text-white">
+                                        <tr>
+                                            <th class="px-6 py-4 text-left font-bold">City</th>
+                                            <th class="px-6 py-4 text-center font-bold">2kW<br /><span
+                                                    class="text-xs font-normal opacity-90">-₹60k subsidy</span></th>
+                                            <th class="px-6 py-4 text-center font-bold">3kW<br /><span
+                                                    class="text-xs font-normal opacity-90">-₹78k subsidy</span></th>
+                                            <th class="px-6 py-4 text-center font-bold">4kW<br /><span
+                                                    class="text-xs font-normal opacity-90">-₹78k subsidy</span></th>
+                                            <th class="px-6 py-4 text-center font-bold">5kW<br /><span
+                                                    class="text-xs font-normal opacity-90">-₹78k subsidy</span></th>
+                                            <th class="px-6 py-4 text-center font-bold">10kW<br /><span
+                                                    class="text-xs font-normal opacity-90">-₹78k subsidy</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gray-200">
+                                        <tr class="hover:bg-blue-50 transition-colors">
+                                            <td class="px-6 py-4 font-bold text-[#111813]">Delhi</td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹1,30,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹1,90,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-black text-primary text-xl">₹1,42,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹2,20,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹1,92,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹2,70,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹2,37,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹3,15,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹5,12,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹5,90,000</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-blue-50 transition-colors">
+                                            <td class="px-6 py-4 font-bold text-[#111813]">Bhopal</td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹1,20,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹1,80,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-black text-primary text-xl">₹1,32,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹2,10,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹1,77,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹2,55,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹2,32,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹3,10,000</div>
+                                            </td>
+                                            <td class="px-6 py-4 text-center">
+                                                <div class="font-bold text-green-600 text-lg">₹5,02,000</div>
+                                                <div class="text-xs text-gray-500 line-through">₹5,80,000</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 text-center">
+                            <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg mb-4 inline-block">
+                                <p class="text-sm text-green-800 font-medium">
+                                    <span
+                                        class="material-symbols-outlined text-green-600 align-middle">celebration</span>
+                                    Save up to ₹78,000 with PM Surya Ghar Muft Bijli Yojana!
+                                </p>
+                            </div>
+                            <p class="text-sm text-gray-500">Prices include solar panels, inverter, mounting structure,
+                                installation, net metering, and 25-year warranty</p>
+                            <p class="text-xs text-gray-400 mt-2">*Subsidy amounts subject to government approval.
+                                After-subsidy prices shown are effective costs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installation Process -->
+            <div class="w-full bg-white py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-4xl font-bold mb-4">Our Installation Process</h2>
+                            <p class="text-gray-500 max-w-2xl mx-auto">From survey to commissioning in just 5 simple
+                                steps</p>
+                        </div>
+                        <div class="grid md:grid-cols-5 gap-6">
+                            <div class="relative">
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                                    <div class="text-primary font-bold text-2xl mb-4">1</div>
+                                    <h3 class="font-bold text-base mb-2">Site Survey</h3>
+                                    <p class="text-sm text-gray-600">Free rooftop assessment and shading analysis</p>
+                                </div>
+                                <div class="hidden md:block absolute top-12 -right-3 text-4xl text-gray-300">→</div>
+                            </div>
+                            <div class="relative">
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                                    <div class="text-primary font-bold text-2xl mb-4">2</div>
+                                    <h3 class="font-bold text-base mb-2">Mounting</h3>
+                                    <p class="text-sm text-gray-600">Install weatherproof structure on rooftop</p>
+                                </div>
+                                <div class="hidden md:block absolute top-12 -right-3 text-4xl text-gray-300">→</div>
+                            </div>
+                            <div class="relative">
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                                    <div class="text-primary font-bold text-2xl mb-4">3</div>
+                                    <h3 class="font-bold text-base mb-2">Panel & Wiring</h3>
+                                    <p class="text-sm text-gray-600">Mount panels and complete DC wiring</p>
+                                </div>
+                                <div class="hidden md:block absolute top-12 -right-3 text-4xl text-gray-300">→</div>
+                            </div>
+                            <div class="relative">
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                                    <div class="text-primary font-bold text-2xl mb-4">4</div>
+                                    <h3 class="font-bold text-base mb-2">Earthing</h3>
+                                    <p class="text-sm text-gray-600">Lightning and electrical protection setup</p>
+                                </div>
+                                <div class="hidden md:block absolute top-12 -right-3 text-4xl text-gray-300">→</div>
+                            </div>
+                            <div>
+                                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                                    <div class="text-primary font-bold text-2xl mb-4">5</div>
+                                    <h3 class="font-bold text-base mb-2">Commissioning</h3>
+                                    <p class="text-sm text-gray-600">Grid sync and final testing with DISCOM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12 bg-primary text-white p-8 rounded-lg text-center">
+                            <div class="text-4xl font-bold mb-2">8 Hours</div>
+                            <div class="text-lg font-medium">Average Installation Time</div>
+                            <p class="text-white/80 mt-3">Swift, professional installation by certified technicians</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose SolarForce -->
+            <div class="w-full bg-background-light py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1200px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-3xl font-bold mb-4">Why Choose SolarForce?</h2>
+                            <p class="text-gray-600 max-w-2xl mx-auto">Backed by industry-leading guarantees and
+                                exceptional service</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">currency_rupee</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Zero Investment</h3>
+                                <p class="text-gray-600 text-sm">100% financing options available with minimal
+                                    documentation</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">schedule</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Swift Installation</h3>
+                                <p class="text-gray-600 text-sm">Complete setup in just 8 hours by expert technicians
+                                </p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">build</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">After-Sales Support</h3>
+                                <p class="text-gray-600 text-sm">45 free maintenance visits over 5 years included</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border border-gray-200">
+                                <div class="size-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                                    <span class="material-symbols-outlined text-primary text-2xl">water_drop</span>
+                                </div>
+                                <h3 class="font-bold text-lg mb-2">Leakage Guarantee</h3>
+                                <p class="text-gray-600 text-sm">₹1 lakh coverage for any roof leakage issues</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 bg-white border border-primary/30 p-6 rounded-lg">
+                            <div class="flex items-center gap-4">
+                                <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-1">Performance Guarantee</h3>
+                                    <p class="text-gray-600">If your system generates less than promised, we pay you ₹8
+                                        per unit difference</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FAQ Section -->
+            <div class="w-full bg-background-light py-16">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[900px]">
+                        <div class="text-center mb-12">
+                            <h2 class="text-[#111813] text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                            <p class="text-gray-500">Everything you need to know about on-grid solar systems</p>
+                        </div>
+                        <div class="space-y-4">
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>How much can I save with an on-grid solar system?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">You can save up to 90% on your electricity
+                                    bills. A typical 3kW system can save approximately ₹30,000 per year, resulting in
+                                    total savings of ₹16.58 lakhs over 25 years.</p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>What is the payback period for on-grid solar?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">With government subsidies, the payback
+                                    period is typically 3-5 years. After that, you enjoy 20+ years of free electricity.
+                                </p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>Will I have power during grid outages?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">No, on-grid systems automatically shut
+                                    down during power cuts due to anti-islanding protection for grid safety. If backup
+                                    power is essential, consider a hybrid solar system with battery storage.</p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>How does net metering work?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">Net metering allows you to export excess
+                                    solar energy to the grid. A bi-directional meter tracks both import and export.
+                                    Exported units are credited to your bill, which you can use later (typically at
+                                    night).</p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>How much rooftop space do I need?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">Approximately 100 sq ft of shadow-free
+                                    rooftop space is required per kW. A 3kW system needs around 300 sq ft, and a 5kW
+                                    system needs 500 sq ft.</p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>What maintenance is required?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">On-grid systems require minimal
+                                    maintenance. Clean panels 2-3 times per year and check inverter performance monthly.
+                                    SolarForce includes 45 free maintenance visits over 5 years.</p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>How long does installation take?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">Physical installation typically takes just
+                                    1-2 days (approximately 8 hours). The entire process including permissions and net
+                                    metering approval takes 2-4 weeks depending on your local DISCOM.</p>
+                            </details>
+                            <details class="bg-white p-6 rounded-xl border border-gray-200 group">
+                                <summary
+                                    class="font-bold text-lg cursor-pointer list-none flex justify-between items-center">
+                                    <span>Do I get a warranty?</span>
+                                    <span
+                                        class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                                </summary>
+                                <p class="mt-4 text-gray-600 leading-relaxed">Yes! Solar panels come with 25-year
+                                    performance warranty, inverter has 5-10 year warranty, and mounting structure has
+                                    lifetime warranty. SolarForce also provides comprehensive service warranty.</p>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="w-full bg-background-light py-20">
+                <div class="px-4 md:px-10 lg:px-40 flex justify-center">
+                    <div class="w-full max-w-[1000px]">
+                        <div class="text-center mb-10">
+                            <h2 class="text-[#111813] text-3xl font-bold mb-4">Estimated System Pricing</h2>
+                            <div
+                                class="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-lg border border-gray-200 shadow-sm">
+                                <span class="text-sm font-medium text-gray-500">Location:</span>
+                                <div class="flex items-center gap-1 font-bold text-[#111813] cursor-pointer">
+                                    New Delhi, NCR <span
+                                        class="material-symbols-outlined text-gray-400">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div
+                                class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm relative overflow-hidden flex flex-col">
+                                <div class="mb-4">
+                                    <h3 class="text-xl font-bold text-[#111813]">3 kW System</h3>
+                                    <p class="text-sm text-gray-500">Ideal for 2-3 BHK Homes</p>
+                                </div>
+                                <div class="mb-6 pb-6 border-b border-gray-100">
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="text-4xl font-black text-[#111813]">₹2,20,000</span>
+                                    </div>
+                                    <p class="text-primary text-sm font-medium mt-1">Effective price after ₹78k subsidy:
+                                        ₹87,000*</p>
+                                </div>
+                                <ul class="space-y-3 mb-8 flex-1">
+                                    <li class="flex items-center gap-2 text-sm text-gray-700">
+                                        <span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+                                        Generate ~360 units/month
+                                    </li>
+                                    <li class="flex items-center gap-2 text-sm text-gray-700">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
+                                        Save ~₹30,000/year
+                                    </li>
+                                    <li class="flex items-center gap-2 text-sm text-gray-700">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">area_chart</span>
+                                        ROI in ~3 years
+                                    </li>
+                                </ul>
+                                <button
+                                    class="w-full py-3 rounded-lg bg-gray-900 text-white font-bold hover:bg-gray-800 transition-colors">Book
+                                    3kW System</button>
+                            </div>
+                            <div
+                                class="bg-white rounded-2xl p-8 border-2 border-primary shadow-lg relative overflow-hidden flex flex-col transform md:-translate-y-2">
+                                <div
+                                    class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                                    MOST POPULAR</div>
+                                <div class="mb-4">
+                                    <h3 class="text-xl font-bold text-[#111813]">5 kW System</h3>
+                                    <p class="text-sm text-gray-500">Ideal for 3-4 BHK + ACs</p>
+                                </div>
+                                <div class="mb-6 pb-6 border-b border-gray-100">
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="text-4xl font-black text-[#111813]">₹3,15,000</span>
+                                    </div>
+                                    <p class="text-primary text-sm font-medium mt-1">Effective price after ₹78k subsidy:
+                                        ₹2,07,000*</p>
+                                </div>
+                                <ul class="space-y-3 mb-8 flex-1">
+                                    <li class="flex items-center gap-2 text-sm text-gray-700">
+                                        <span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+                                        Generate ~600 units/month
+                                    </li>
+                                    <li class="flex items-center gap-2 text-sm text-gray-700">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">currency_rupee</span>
+                                        Save ~₹60,000/year
+                                    </li>
+                                    <li class="flex items-center gap-2 text-sm text-gray-700">
+                                        <span
+                                            class="material-symbols-outlined text-primary text-[20px]">area_chart</span>
+                                        ROI in ~3.5 years
+                                    </li>
+                                </ul>
+                                <button
+                                    class="w-full py-3 rounded-lg bg-primary text-white font-bold hover:bg-blue-800 transition-colors shadow-md">Book
+                                    5kW System</button>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-gray-400 mt-8">*Prices are indicative market averages and may
+                            vary based on specific component choices.</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="bg-white border-t border-gray-200 py-12">
+                <div
+                    class="px-4 md:px-10 lg:px-40 flex flex-col md:flex-row justify-between items-center gap-6 max-w-[1200px] mx-auto">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-2">Ready to switch to solar?</h3>
+                        <p class="text-gray-500">Get a custom quote designed for your roof in 24 hours.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="/contact"
+                            class="px-6 py-3 rounded-lg border border-gray-300 font-bold text-gray-700 hover:bg-gray-50 transition-colors">Call
+                            Sales</a>
+                        <a href="/go-solar"
+                            class="px-6 py-3 rounded-lg bg-primary font-bold text-white hover:bg-blue-800 shadow-lg shadow-primary/30 transition-colors">Get
+                            Free Quote</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

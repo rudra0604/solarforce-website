@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SolarForce - Residential Solar Solutions</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0052CC",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                        "text-main": "#1E293B",
+                        "text-light": "#64748B",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-gray-100 overflow-x-hidden">
+    <div class="relative flex flex-col min-h-screen w-full group/design-root">
+        <section class="flex flex-col">
+            <div class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+                <!-- Full-width Hero Background -->
+                <div class="absolute inset-0 z-0">
+                    <div class="w-full h-full bg-cover bg-center bg-no-repeat"
+                        data-alt="Modern suburban home with solar panels on roof under clear blue sky"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZtUzFv7URqnLkh-vO-KR7-M09JHdKLYmV5IQz6GHFjCQb7hnq_7PHptOtC78DJoCq0wReadK1Y0-jNsSSTiBPjrnaaVPqtYE8GqS_esaSevxOcqY9D6IBCuyHMWfOgmsRs5RlROdVusnlgAYN1QRjG7hQXCchCSO17NhAN9pcy2d1--LQTt7sAZMYsrEE6Ji8yaVDyh4HQBu7Dzzd0h2IQ065qMU39-2zTyx1SBOfL1226PNmo9zJkG3520tRsR8FmwdZ3E4XUFY"); background-size: cover; background-position: center;'>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+                </div>
+                <!-- Hero Content -->
+                <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                    <div class="max-w-3xl">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 backdrop-blur-sm border border-primary/30 mb-6">
+                            <span class="material-symbols-outlined text-white text-sm">home</span>
+                            <span class="text-xs font-bold text-white uppercase tracking-wide">Residential Solar
+                                Solutions</span>
+                        </div>
+                        <h1
+                            class="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+                            Go solar. Pay less.
+                        </h1>
+                        <h2 class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed mb-8">
+                            High-Performance Solar Installations That Pay for Themselves
+                        </h2>
+                        <p class="text-white/80 text-lg leading-relaxed mb-10 max-w-2xl">
+                            Switch to clean, affordable energy with SolarForce Residential Solar Solutions. Reduce
+                            electricity bills by up to 90% and gain energy independence with custom rooftop systems
+                            designed for your home.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="/go-solar?customerType=residential"
+                                class="flex items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold leading-normal hover:bg-blue-700 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+                                <span class="mr-2">Get a Quote</span>
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="/calculator"
+                                class="flex items-center justify-center rounded-xl h-14 px-8 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white text-base font-bold leading-normal hover:bg-white/20 transition-all">
+                                <span class="material-symbols-outlined text-sm mr-2">calculate</span>
+                                <span>Calculate Savings</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col">
+            <div class="px-4 md:px-10 lg:px-40 py-16 lg:py-20">
+                <div class="max-w-[1200px] mx-auto w-full flex flex-col gap-12">
+                    <div class="flex flex-col gap-4 text-center">
+                        <h2
+                            class="text-text-main dark:text-white text-4xl md:text-5xl font-black leading-tight tracking-[-0.015em] px-4 pb-3">
+                            Everything you need to go solar
+                        </h2>
+                        <p
+                            class="text-text-main dark:text-gray-300 text-lg font-normal leading-relaxed max-w-3xl mx-auto">
+                            Tailored systems designed to meet your specific energy needs, budget, and roof structure.
+                            From site survey to installation, subsidy support, and long-term maintenance, we handle
+                            everything.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div
+                            class="flex flex-col gap-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-2xl hover:border-primary/50 transition-all group">
+                            <div
+                                class="text-primary bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <path d="M9 22V12h6v10" />
+                                    <path d="M9 6h6" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="text-text-main dark:text-white text-xl font-black leading-tight">Rooftop
+                                    Solar Installation</h3>
+                                <p class="text-text-light dark:text-gray-400 text-base font-normal leading-relaxed">
+                                    High-efficiency panels optimized for independent houses & villas to maximize power
+                                    generation and ROI.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-2xl hover:border-primary/50 transition-all group">
+                            <div
+                                class="text-primary bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="14" x="2" y="5" rx="2" />
+                                    <line x1="2" x2="22" y1="10" y2="10" />
+                                    <path d="M12 15h.01" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="text-text-main dark:text-white text-xl font-black leading-tight">Government
+                                    Subsidy Support</h3>
+                                <p class="text-text-light dark:text-gray-400 text-base font-normal leading-relaxed">
+                                    Complete subsidy & documentation support including net-metering approvals and DISCOM
+                                    coordination.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-2xl hover:border-primary/50 transition-all group">
+                            <div
+                                class="text-primary bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+                                    <path d="M12 18V6" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="text-text-main dark:text-white text-xl font-black leading-tight">EMI &
+                                    Financing Options</h3>
+                                <p class="text-text-light dark:text-gray-400 text-base font-normal leading-relaxed">
+                                    Flexible EMI and financing options available to make solar installations affordable
+                                    for every budget.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-2xl hover:border-primary/50 transition-all group">
+                            <div
+                                class="text-primary bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 3v18h18" />
+                                    <path d="m19 9-5 5-4-4-3 3" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="text-text-main dark:text-white text-xl font-black leading-tight">Performance
+                                    Monitoring</h3>
+                                <p class="text-text-light dark:text-gray-400 text-base font-normal leading-relaxed">
+                                    Real-time monitoring dashboard and high-efficiency panels with advanced tracking
+                                    capabilities.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-2xl hover:border-primary/50 transition-all group">
+                            <div
+                                class="text-primary bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="text-text-main dark:text-white text-xl font-black leading-tight">End-to-End
+                                    Installation</h3>
+                                <p class="text-text-light dark:text-gray-400 text-base font-normal leading-relaxed">
+                                    Complete turnkey solution from survey to commissioning with professional
+                                    installation team.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col gap-4 rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-2xl hover:border-primary/50 transition-all group">
+                            <div
+                                class="text-primary bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <h3 class="text-text-main dark:text-white text-xl font-black leading-tight">Maintenance
+                                    & Support</h3>
+                                <p class="text-text-light dark:text-gray-400 text-base font-normal leading-relaxed">
+                                    Annual maintenance packages, cleaning services, and ongoing technical support for
+                                    peak performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before/After Comparison Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-black text-text-main mb-4">
+                        Real savings from real customers
+                    </h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <!-- Before -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?w=600" alt="Before Solar"
+                            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent flex items-end p-8">
+                            <div>
+                                <span
+                                    class="inline-block px-4 py-2 bg-red-600 text-white font-bold rounded-full mb-3">BEFORE</span>
+                                <h3 class="text-white text-2xl font-black">Monthly Bill: ₹8,500</h3>
+                                <p class="text-white/80">Dependent on grid electricity</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- After -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600" alt="After Solar"
+                            class="w-full h-96 object-cover transform group-hover:scale-110 transition-transform duration-700" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent flex items-end p-8">
+                            <div>
+                                <span
+                                    class="inline-block px-4 py-2 bg-green-600 text-white font-bold rounded-full mb-3">AFTER</span>
+                                <h3 class="text-white text-2xl font-black">Monthly Bill: ₹850</h3>
+                                <p class="text-white/80">90% savings with solar power</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Savings Calculator Card -->
+                <div
+                    class="bg-gradient-to-br from-primary to-blue-700 rounded-3xl p-10 text-white text-center shadow-2xl">
+                    <h3 class="text-3xl font-black mb-4">Calculate Your Potential Savings</h3>
+                    <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+                        See how much you could save with solar based on your current electricity bill
+                    </p>
+                    <button
+                        class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-3 shadow-xl">
+                        <span class="material-symbols-outlined">calculate</span>
+                        Talk to Energy Tech
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="flex flex-col">
+            <div class="px-4 md:px-10 lg:px-40 py-16">
+                <div class="max-w-[1200px] mx-auto w-full">
+                    <h2
+                        class="text-text-main dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em] pb-10">
+                        Why go solar?
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div
+                            class="flex items-start gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <span class="material-symbols-outlined text-2xl">payments</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Zero Electricity Bills
+                                </h3>
+                                <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                    Generate your own power and drastically reduce or eliminate your monthly electricity
+                                    expenses. Sell excess power back to the grid.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <span class="material-symbols-outlined text-2xl">real_estate_agent</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Increase Property
+                                    Value</h3>
+                                <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                    Homes with solar installations sell faster and for a premium compared to homes
+                                    without energy independence.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <span class="material-symbols-outlined text-2xl">verified_user</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">25-Year Performance
+                                    Warranty</h3>
+                                <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                    Rest easy with industry-leading warranties on panels and inverters. We guarantee
+                                    performance for decades.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start gap-4 p-6 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+                                <span class="material-symbols-outlined text-2xl">eco</span>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Environmental Impact
+                                </h3>
+                                <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                    Reduce your carbon footprint significantly. A standard home system offsets carbon
+                                    emissions equivalent to planting 100 trees annually.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col bg-white dark:bg-slate-900">
+            <div class="px-4 md:px-10 lg:px-40 py-20">
+                <div class="max-w-[1200px] mx-auto w-full">
+                    <div class="text-center mb-16">
+                        <h2 class="text-text-main dark:text-white text-4xl md:text-5xl font-black mb-4">How it works
+                        </h2>
+                        <p class="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg">We handle everything from
+                            design to installation to maintenance</p>
+                    </div>
+
+                    <!-- Process Steps -->
+                    <div class="space-y-16">
+                        <!-- Step 1 -->
+                        <div class="grid md:grid-cols-2 gap-10 items-center">
+                            <div class="order-2 md:order-1">
+                                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600"
+                                    alt="Site Survey" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+                            </div>
+                            <div class="order-1 md:order-2">
+                                <div
+                                    class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                                    STEP 1</div>
+                                <h3
+                                    class="text-3xl font-black text-text-main dark:text-white mb-4 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary text-4xl">search</span>
+                                    Site Survey & Energy Assessment
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+                                    We begin with a detailed site inspection to evaluate your property and energy needs.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Roof structure & available space
+                                            analysis</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Current electricity consumption
+                                            review</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Shadow analysis & orientation
+                                            mapping</span>
+                                    </li>
+                                </ul>
+                                <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+                                    This helps us design a system that delivers optimal power generation and ROI.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="grid md:grid-cols-2 gap-10 items-center">
+                            <div>
+                                <div
+                                    class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                                    STEP 2</div>
+                                <h3
+                                    class="text-3xl font-black text-text-main dark:text-white mb-4 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary text-4xl">design_services</span>
+                                    Customized System Design
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+                                    Based on the assessment, our engineers create a tailor-made solar system design that
+                                    fits your needs.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Energy requirements
+                                            optimization</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Budget-friendly solutions</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Residential, housing society, or
+                                            commercial customization</span>
+                                    </li>
+                                </ul>
+                                <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+                                    Every system is optimized for efficiency, durability, and long-term savings.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600"
+                                    alt="System Design" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="grid md:grid-cols-2 gap-10 items-center">
+                            <div class="order-2 md:order-1">
+                                <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600"
+                                    alt="Documentation" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+                            </div>
+                            <div class="order-1 md:order-2">
+                                <div
+                                    class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                                    STEP 3</div>
+                                <h3
+                                    class="text-3xl font-black text-text-main dark:text-white mb-4 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary text-4xl">description</span>
+                                    Approvals, Subsidy & Documentation
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+                                    We take care of all paperwork and approvals, ensuring a smooth, stress-free
+                                    transition to solar.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Government subsidy processing &
+                                            DBT support</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Net-metering applications</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">DISCOM coordination &
+                                            permissions</span>
+                                    </li>
+                                </ul>
+                                <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+                                    This ensures a smooth, stress-free transition to solar.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="grid md:grid-cols-2 gap-10 items-center">
+                            <div>
+                                <div
+                                    class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                                    STEP 4</div>
+                                <h3
+                                    class="text-3xl font-black text-text-main dark:text-white mb-4 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary text-4xl">construction</span>
+                                    Installation & Commissioning
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+                                    Our experienced team installs the system using high-quality components and industry
+                                    best practices.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Test system performance
+                                            thoroughly</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Connect to grid
+                                            infrastructure</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Ensure safe and compliant
+                                            commissioning</span>
+                                    </li>
+                                </ul>
+                                <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+                                    Projects are completed on time with minimal disruption within 30 days.
+                                </p>
+                            </div>
+                            <div>
+                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600"
+                                    alt="Installation" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="grid md:grid-cols-2 gap-10 items-center">
+                            <div class="order-2 md:order-1">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600"
+                                    alt="Monitoring" class="rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+                            </div>
+                            <div class="order-1 md:order-2">
+                                <div
+                                    class="bg-primary text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                                    STEP 5</div>
+                                <h3
+                                    class="text-3xl font-black text-text-main dark:text-white mb-4 flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-primary text-4xl">analytics</span>
+                                    Monitoring, Maintenance & Support
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-400 text-lg mb-6">
+                                    After commissioning, we provide ongoing support to ensure peak performance.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Real-time performance monitoring
+                                            dashboard</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Preventive maintenance
+                                            services</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                        <span class="text-gray-700 dark:text-gray-300">Ongoing technical support
+                                            team</span>
+                                    </li>
+                                </ul>
+                                <p class="text-gray-600 dark:text-gray-400 mt-4 italic">
+                                    This ensures your solar system operates at peak efficiency year after year.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Why Our Process Works -->
+                    <div
+                        class="mt-20 bg-gradient-to-br from-primary/5 to-blue-50 dark:from-primary/10 dark:to-slate-800 rounded-3xl p-10">
+                        <h3 class="text-2xl font-black text-text-main dark:text-white mb-8 text-center">Why Our Process
+                            Works</h3>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div
+                                    class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+                                </div>
+                                <h4 class="font-bold text-text-main dark:text-white mb-2">End-to-End Execution</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Complete turnkey solution from
+                                    survey to support</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+                                </div>
+                                <h4 class="font-bold text-text-main dark:text-white mb-2">Transparent Communication</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Clear updates at every step of the
+                                    journey</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                                </div>
+                                <h4 class="font-bold text-text-main dark:text-white mb-2">Optimized Performance</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Technical & economic optimization
+                                    guaranteed</p>
+                            </div>
+                            <div class="text-center">
+                                <div
+                                    class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                                    <span class="material-symbols-outlined text-primary text-3xl">shield</span>
+                                </div>
+                                <h4 class="font-bold text-text-main dark:text-white mb-2">Long-Term Assurance</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">25+ years performance warranty
+                                    included</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Process Summary -->
+                    <div class="mt-12 text-center">
+                        <p class="text-gray-500 dark:text-gray-400 text-lg mb-4">Quick Summary</p>
+                        <div class="flex flex-wrap justify-center items-center gap-4 text-primary font-bold text-lg">
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-outlined">search</span> Survey
+                            </span>
+                            <span class="text-gray-400">→</span>
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-outlined">design_services</span> Design
+                            </span>
+                            <span class="text-gray-400">→</span>
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-outlined">description</span> Approvals
+                            </span>
+                            <span class="text-gray-400">→</span>
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-outlined">construction</span> Installation
+                            </span>
+                            <span class="text-gray-400">→</span>
+                            <span class="flex items-center gap-2">
+                                <span class="material-symbols-outlined">analytics</span> Monitoring
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col mb-16">
+            <div class="px-4 md:px-10 lg:px-40 py-16">
+                <div class="max-w-[800px] mx-auto w-full">
+                    <h2 class="text-text-main dark:text-white text-3xl font-bold leading-tight mb-8 text-center">
+                        Frequently Asked Questions</h2>
+                    <div class="flex flex-col gap-4">
+                        <details
+                            class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 [&amp;_summary::-webkit-details-marker]:hidden">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h3 class="font-medium text-text-main dark:text-white">Does solar work on cloudy days?
+                                </h3>
+                                <span
+                                    class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                Yes, solar panels can still generate electricity on cloudy days, although their output
+                                is reduced. They utilize diffuse sunlight. However, during heavy rain or night, your
+                                home will draw power from the grid or your battery backup.
+                            </p>
+                        </details>
+                        <details
+                            class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 [&amp;_summary::-webkit-details-marker]:hidden">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h3 class="font-medium text-text-main dark:text-white">What maintenance is required?
+                                </h3>
+                                <span
+                                    class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                Solar systems are very low maintenance. We recommend cleaning the panels every 3-6
+                                months to remove dust and debris for maximum efficiency. Our Maintenance Packages cover
+                                this for you.
+                            </p>
+                        </details>
+                        <details
+                            class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 [&amp;_summary::-webkit-details-marker]:hidden">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h3 class="font-medium text-text-main dark:text-white">Is financing available?</h3>
+                                <span
+                                    class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                Absolutely. We partner with leading banks to offer solar loans with attractive interest
+                                rates. The EMI is often lower than your current electricity bill savings.
+                            </p>
+                        </details>
+                        <details
+                            class="group bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-4 [&amp;_summary::-webkit-details-marker]:hidden">
+                            <summary class="flex items-center justify-between cursor-pointer">
+                                <h3 class="font-medium text-text-main dark:text-white">How long does installation take?
+                                </h3>
+                                <span
+                                    class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                The physical installation on your roof typically takes 1 to 2 days for a standard
+                                residential system. However, the permitting and net-metering approval process with the
+                                local utility may take 2-4 weeks.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

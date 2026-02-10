@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SolarForce - Home Solar Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0052CC", // Updated to Brand Blue
+                        "secondary": "#0f172a", // Keeping dark slate for text
+                        "background-light": "#fcfaf8",
+                        "background-dark": "#1d150c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.375rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">.accordion-item input[type="checkbox"] {
+            display: none;
+        }
+        .accordion-item input[type="checkbox"]:checked ~ .accordion-content {
+            max-height: 1000px;padding-top: 1rem;
+            padding-bottom: 1rem;
+            opacity: 1;
+            visibility: visible;
+        }
+        .accordion-item input[type="checkbox"]:checked ~ .accordion-title .material-symbols-outlined {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-secondary antialiased overflow-x-hidden">
+
+    <div class="relative w-full min-h-[600px] flex items-center bg-background-light">
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center"
+                data-alt="Modern house roof with solar panels against blue sky"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDS5H78C5M3oDnC4o5YvbjYZ_Aj8-_bOscM1vagw6mguxTvDy9g9swC9-M18ndQ-TU9HFuJ2suc7yhKL2t0BXi4zRgNsMWosNDJfKmwPG7d5JJpuY5--TON4TBrlSQujzrCx7l0-BIWG3sjPAJ_qmOgh3FzlnLa-hKiikQ9sLc1z3HKtIi4czePcmzIt2cMNXHqQtPxmmCXu7QlwHE7JDyGbict1iPnwko_-P1nOl9FIhvXgyo-qkrUS6HZpZ--X9arv61zUsMDD6M');">
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-white/40 sm:to-transparent lg:via-white/80">
+            </div>
+            <div class="absolute inset-0 bg-white/90 lg:hidden"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 w-fit">
+                        <span class="material-symbols-outlined text-primary text-sm">verified</span>
+                        <span class="text-xs font-bold text-blue-800 uppercase tracking-wide">India's #1 Solar
+                            Partner</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-secondary leading-[1.1] tracking-tight">
+                        Increase Your <span class="text-primary">Home's Efficiency</span> with Solar
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-xl font-medium leading-relaxed">
+                        High-Performance Solar Installations That Pay for Themselves
+                    </p>
+                </div>
+                <div class="lg:col-span-5">
+                    <div
+                        class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8 transform transition-all hover:shadow-2xl">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-secondary">Get Your Free Quote</h3>
+                            <p class="text-sm text-gray-500 mt-1">Fill out the form below to get a customized solar
+                                plan.</p>
+                        </div>
+                        <form id="heroQuoteForm" class="flex flex-col gap-4">
+                            <div class="space-y-1">
+                                <label class="text-xs font-semibold text-gray-700 uppercase" for="hero-name">Full
+                                    Name *</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <span class="material-symbols-outlined text-gray-400 text-[20px]">person</span>
+                                    </div>
+                                    <input name="name" required
+                                        class="block w-full pl-10 rounded-lg border-gray-300 bg-gray-50 text-secondary focus:border-primary focus:ring-primary sm:text-sm py-2.5"
+                                        id="hero-name" placeholder="Enter your name" type="text" />
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-semibold text-gray-700 uppercase" for="hero-phone">Phone
+                                    Number *</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <span
+                                            class="material-symbols-outlined text-gray-400 text-[20px]">phone_iphone</span>
+                                    </div>
+                                    <input name="phone" required
+                                        class="block w-full pl-10 rounded-lg border-gray-300 bg-gray-50 text-secondary focus:border-primary focus:ring-primary sm:text-sm py-2.5"
+                                        id="hero-phone" placeholder="+91 98765 43210" type="tel" />
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label class="text-xs font-semibold text-gray-700 uppercase" for="hero-pincode">Pin
+                                        Code *</label>
+                                    <input name="pincode" required pattern="[0-9]{6}" maxlength="6"
+                                        class="block w-full rounded-lg border-gray-300 bg-gray-50 text-secondary focus:border-primary focus:ring-primary sm:text-sm py-2.5 px-3"
+                                        id="hero-pincode" placeholder="110001" type="text" />
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-xs font-semibold text-gray-700 uppercase" for="hero-type">Solar
+                                        For</label>
+                                    <select name="customerType"
+                                        class="block w-full rounded-lg border-gray-300 bg-gray-50 text-secondary focus:border-primary focus:ring-primary sm:text-sm py-2.5 px-3"
+                                        id="hero-type">
+                                        <option value="residential">Home</option>
+                                        <option value="commercial">Business</option>
+                                        <option value="society">Society</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button
+                                class="mt-2 w-full flex justify-center items-center gap-2 bg-primary hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg shadow-blue-500/30 transition-colors"
+                                type="submit">
+                                Get Free Quote
+                                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                            </button>
+                            <p class="text-[10px] text-center text-gray-400 mt-2">
+                                By clicking submit, you agree to our Terms &amp; Privacy Policy.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="py-16 md:py-24 bg-background-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Our Solar Solutions for Every Need</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">Whether for your home, community, or business,
+                    SolarForce offers tailored solar energy packages to maximize your savings and sustainability.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                <div
+                    class="animate-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" data-alt="Modern residential house with solar panels"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDS5H78C5M3oDnC4o5YvbjYZ_Aj8-_bOscM1vagw6mguxTvDy9g9swC9-M18ndQ-TU9HFuJ2suc7yhKL2t0BXi4zRgNsMWosNDJfKmwPG7d5JJpuY5--TON4TBrlSQujzrCx7l0-BIWG3sjPAJ_qmOgh3FzlnLa-hKiikQ9sLc1z3HKtIi4czePcmzIt2cMNXHqQtPxmmCXu7QlwHE7JDyGbict1iPnwko_-P1nOl9FIhvXgyo-qkrUS6HZpZ--X9arv61zUsMDD6M');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-secondary mb-3">Residential Solar</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Power your home with clean energy and
+                            drastically reduce your electricity bills. Custom solutions for every rooftop.</p>
+                        <a class="inline-flex justify-center items-center gap-2 bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md shadow-blue-500/20 transition-colors self-start"
+                            href="/homes">
+                            Learn More
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="animate-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" data-alt="Apartment complex with solar panels on roof"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGy3Bn9rOLl1yiz-5YJpJAbzRKYJOwouxDC61POdJH79exkIk0zlhnoVxgQFDqjFu9AfTck0xC_Gu7Nh36KLpy05NDKbOp3UKkcnA2VErsvxSHKR1I-R9jU8mTvBwO-Ylg4Bi5h0kfmtkMr7ohBszwXacLWz5SWVZztb_MyOuHCA7n7aNtNlblTl7w9XDGSVrLsvYhzyNLFeG-AesF5LDZdLLKpnquUsxGfqNJXfob55hhEBDayFxWRQF-wyw38-RinSoOfw9NEKU');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-secondary mb-3">Housing Society Solar</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Bring collective savings and green
+                            energy to your entire community. Reduce common area expenses sustainably.</p>
+                        <a class="inline-flex justify-center items-center gap-2 bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md shadow-blue-500/20 transition-colors self-start"
+                            href="/housing-society">
+                            Learn More
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="animate-card bg-white rounded-2xl shadow-lg border border-gray-100 flex flex-col overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl">
+                    <div class="h-48 bg-cover bg-center" data-alt="Commercial building with large solar installation"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCG-g272fwolwcSDPHfwVZiH8ZG6dWYE6B121HaGa9WOV6-kXjS8cCwxfqr0lI3174gLScDC8cteVL6DOZEPN4I9lnSCW08brmC_czh4dnetlyAqg14mLnOI4vWt5Mx8inD3VP3X3VJHygxltnv_QRIUD7sFc0yRxhSxowV9GR0hxKxJXPbDiiSxSikjoeYarYa2MHy7nw4dZK8dEk0uaaVvAX3Isaft_hCQH2vdu5wzf2UD44T6433VrNuq0Hf0PfwmiZTY2uLy1M');">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold text-secondary mb-3">Commercial Solar</h3>
+                        <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Optimize operational costs and enhance
+                            your brand's green image with robust commercial solar systems.</p>
+                        <a class="inline-flex justify-center items-center gap-2 bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md shadow-blue-500/20 transition-colors self-start"
+                            href="/commercial">
+                            Learn More
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white py-20 overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-40 h-40 bg-primary rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-3">Trusted by Industry Leaders</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Partnering with the best to deliver exceptional solar
+                    solutions</p>
+            </div>
+
+            <!-- Logos Container -->
+            <div class="flex flex-wrap justify-center items-center gap-20 md:gap-32">
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-400 to-primary rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <img src="/img/trusted_by/2.png" alt="Trusted Partner"
+                            class="h-28 md:h-36 w-auto object-contain transition-all duration-500" />
+                    </div>
+                </div>
+
+                <div class="group relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-400 to-primary rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                        <img src="/img/trusted_by/3.png" alt="Trusted Partner"
+                            class="h-28 md:h-36 w-auto object-contain transition-all duration-500" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-background-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover why thousands of homeowners trust SolarForce for
+                    their renewable energy journey.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="animate-card bg-white rounded-xl p-6 shadow-md border border-gray-100 flex flex-col gap-4">
+                    <p class="text-gray-700 italic leading-relaxed">"I decided to install rooftop solar to reduce my
+                        electricity bills, and choosing SolarForce was the right decision. Their team explained
+                        everything clearly, handled the subsidy paperwork, and completed the installation smoothly. My
+                        power bills have reduced significantly, and the system is working perfectly. I highly recommend
+                        SolarForce to anyone planning to go solar."</p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-50">
+                        <div class="w-12 h-12 rounded-full bg-cover bg-center border-2 border-primary/20"
+                            style="background-image: url('/img/testimonial/Gangadhar shivhare.jpeg');"></div>
+                        <div>
+                            <p class="font-bold text-secondary text-sm">Shubham Jain</p>
+                            <p class="text-xs text-gray-500">Dev Nagar, Bhind</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="animate-card bg-white rounded-xl p-6 shadow-md border border-gray-100 flex flex-col gap-4">
+                    <p class="text-gray-700 italic leading-relaxed">"SolarForce provided excellent service from site
+                        survey to final commissioning. The installation was done on time without any disturbance, and
+                        the team was very professional. They also helped me understand monitoring and maintenance
+                        properly. I'm very satisfied with the quality of work and the savings I'm already seeing."</p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-50">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-2xl">person</span>
+                        </div>
+                        <div>
+                            <p class="font-bold text-secondary text-sm">Abhishek Sharma</p>
+                            <p class="text-xs text-gray-500">Lashkar Road, Bhind</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="animate-card bg-white rounded-xl p-6 shadow-md border border-gray-100 flex flex-col gap-4">
+                    <p class="text-gray-700 italic leading-relaxed">"I was initially worried about the cost and
+                        documentation involved in solar installation, but SolarForce made the entire process simple and
+                        hassle-free. Their guidance on subsidy and financing was very helpful. The system performance is
+                        great, and I'm happy with the long-term savings."</p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-50">
+                        <div class="w-12 h-12 rounded-full bg-cover bg-center border-2 border-primary/20"
+                            style="background-image: url('/img/testimonial/Ashok shrivas.png');"></div>
+                        <div>
+                            <p class="font-bold text-secondary text-sm">Ashok Kumar Shrivas</p>
+                            <p class="text-xs text-gray-500">Arya Nagar, Lashkar Road, Bhind</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="animate-card bg-white rounded-xl p-6 shadow-md border border-gray-100 flex flex-col gap-4">
+                    <p class="text-gray-700 italic leading-relaxed">"SolarForce installed a high-quality solar system at
+                        my property with complete transparency and professionalism. The team was supportive,
+                        knowledgeable, and responsive throughout the process. The monitoring support gives me confidence
+                        that my system is performing efficiently. Truly a reliable solar company."</p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-gray-50">
+                        <div class="w-12 h-12 rounded-full bg-cover bg-center border-2 border-primary/20"
+                            style="background-image: url('/img/testimonial/Shubham jain.jpeg');"></div>
+                        <div>
+                            <p class="font-bold text-secondary text-sm">Gangadhar Shivhare</p>
+                            <p class="text-xs text-gray-500">Etawah Road, Bhind, Madhya Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+    </div>
+    </div>
+    </section>
+    <section id="faq" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Find quick answers to the most common questions about solar
+                    energy and SolarForce solutions.</p>
+            </div>
+            <div class="flex flex-col gap-4 max-w-4xl mx-auto">
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq1" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq1">
+                        How much can I save by installing solar panels?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>Most customers save 50%–90% on their electricity bills, depending on system size, energy
+                            usage, and sunlight availability. Solar systems typically pay for themselves within a few
+                            years.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq2" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq2">
+                        Do you provide solar subsidy support?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>Yes. SolarForce provides complete subsidy and documentation support, including net-metering
+                            approvals and coordination with the electricity distribution company (DISCOM).</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq3" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq3">
+                        How long does a solar installation take?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>A standard residential solar installation is usually completed within 30 days, including site
+                            survey, approvals, installation, and commissioning.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq4" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq4">
+                        Do you offer EMI or financing options?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>Yes. We offer flexible EMI and financing options to make solar installations affordable.
+                            Eligibility depends on the customer profile and system size.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq5" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq5">
+                        What type of properties do you install solar for?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>We install solar systems for independent homes & villas, housing societies & apartments,
+                            commercial buildings, and institutions and offices.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq6" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq6">
+                        How long do solar panels last?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>High-quality solar panels typically last 25+ years with minimal maintenance. Inverters may
+                            require replacement earlier depending on usage.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq7" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq7">
+                        Will solar work during power cuts?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>Grid-connected solar systems shut down during power cuts for safety. However, battery backup
+                            or hybrid systems can be installed if power backup is required.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq8" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq8">
+                        Is my roof suitable for solar installation?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>Most rooftops are suitable. Our team conducts a free site survey to check roof strength,
+                            space availability, and shadow-free areas.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq9" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq9">
+                        Do you provide maintenance and monitoring services?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>Yes. We offer real-time performance monitoring and ongoing maintenance services to ensure
+                            your solar system operates at peak efficiency.</p>
+                    </div>
+                </div>
+                <div
+                    class="accordion-item bg-background-light rounded-xl shadow-md border border-gray-100 overflow-hidden">
+                    <input class="absolute" id="faq10" type="checkbox" />
+                    <label
+                        class="accordion-title flex justify-between items-center p-6 cursor-pointer text-lg font-semibold text-secondary hover:text-primary transition-colors duration-200"
+                        for="faq10">
+                        In which locations do you provide solar services?
+                        <span
+                            class="material-symbols-outlined text-2xl transition-transform duration-300">expand_more</span>
+                    </label>
+                    <div
+                        class="accordion-content max-h-0 overflow-hidden px-6 text-gray-700 leading-relaxed transition-all duration-300 opacity-0 visibility-hidden">
+                        <p>We currently provide solar installation services across Madhya Pradesh and New Delhi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animation Scripts -->
+    <script src="/js/scroll-animations.js"></script>
+    <script src="/js/navbar-scroll.js"></script>
+
+    <!-- Hero Quote Form Handler - Redirect to Go Solar page -->
+    <script>
+        document.getElementById('heroQuoteForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('hero-name').value;
+            const phone = document.getElementById('hero-phone').value;
+            const pincode = document.getElementById('hero-pincode').value;
+            const customerType = document.getElementById('hero-type').value;
+
+            // Build URL parameters
+            const params = new URLSearchParams({
+                name: name,
+                phone: phone,
+                pincode: pincode,
+                customerType: customerType
+            });
+
+            // Redirect to go-solar page with prefilled data
+            window.location.href = `/go-solar?${params.toString()}`;
+        });
+    </script>
+</body>
+
+</html>

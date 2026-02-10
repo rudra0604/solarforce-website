@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: solarforce-website
+    runtime: docker
+    plan: free
+    buildCommand: bun install
+    startCommand: bun run start
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production

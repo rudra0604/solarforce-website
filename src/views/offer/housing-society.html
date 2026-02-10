@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Housing Society Solar Solutions - SolarForce</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.15.0/dist/framer-motion.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0052CC",
+                        "background-light": "#eff6ff",
+                        "background-dark": "#0B1120",
+                        "text-dark": "#0f172a",
+                        "text-light": "#e0f2fe",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-dark dark:text-white transition-colors duration-200">
+    <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Hero Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="w-full h-full bg-cover bg-center bg-no-repeat"
+                data-alt="Modern high-rise apartment complex with solar panels on the roof under a blue sky"
+                style='background-image: url("https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1920&auto=format&fit=crop"); background-size: cover; background-position: center;'>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="max-w-4xl">
+                <h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-6">
+                    Solar Power Solutions for Housing Societies & Apartments
+                </h1>
+                <p class="text-white/90 text-xl md:text-2xl font-medium leading-relaxed mb-8">
+                    SolarForce provides scalable solar solutions for housing societies, apartments, and residential
+                    complexes, helping communities lower common-area electricity costs and adopt sustainable energy.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="/go-solar?customerType=society"
+                        class="flex items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold leading-normal hover:bg-blue-700 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+                        <span class="mr-2">Get a Quote</span>
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                    <!-- <a href="/ci-calculator"
+                        class="flex items-center justify-center rounded-xl h-14 px-8 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white text-base font-bold leading-normal hover:bg-white/20 transition-all">
+                        <span class="material-symbols-outlined text-sm mr-2">calculate</span>
+                        <span>Calculate Savings</span>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Section -->
+    <section class="py-12 bg-slate-50 dark:bg-slate-900 border-y border-gray-200 dark:border-gray-800"
+        data-motion="fade-up">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col gap-1">
+                    <div class="text-3xl md:text-4xl font-bold text-primary">250+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Societies Solarized</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="text-3xl md:text-4xl font-bold text-primary">50MW+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Capacity Installed</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="text-3xl md:text-4xl font-bold text-primary">₹100Cr+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Savings Generated</div>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <div class="text-3xl md:text-4xl font-bold text-primary">25+</div>
+                    <div class="text-sm text-gray-600 dark:text-gray-400">Years Warranty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="flex justify-center px-4 md:px-10 py-12 md:py-20">
+        <div class="w-full max-w-[1200px] flex flex-col gap-16 md:gap-24">
+            <!-- What We Offer Section -->
+            <section class="flex flex-col gap-10" data-motion="fade-up">
+                <div class="flex flex-col gap-4 text-center max-w-3xl mx-auto">
+                    <div class="inline-flex items-center justify-center mb-2">
+                        <span
+                            class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-md uppercase tracking-wider">
+                            For Housing Societies
+                        </span>
+                    </div>
+                    <h2
+                        class="text-text-dark dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+                        What We Offer
+                    </h2>
+                    <p class="ext-text-dark dark:text-white /80 text-lg leading-relaxed mb-10 max-w-3xl">
+                        We design and install shared solar systems for lifts, parking lights, water pumps, corridors,
+                        and other common
+                        facilities—ensuring maximum savings and smooth system operation.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+                    <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 p-6 hover:shadow-lg transition-shadow md:col-span-1 lg:col-span-2"
+                        data-motion="scale" data-delay="0">
+                        <div
+                            class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-2xl">bolt</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Common-area Power Usage</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Solar systems designed specifically for lifts, parking lights, water pumps, and
+                                corridors.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow md:col-span-1 lg:col-span-2"
+                        data-motion="scale" data-delay="100">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">analytics</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Capacity Planning</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Customized system sizing based on your society's energy consumption patterns.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-2"
+                        data-motion="scale" data-delay="200">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">receipt_long</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Billing & Monitoring</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Real-time performance tracking and transparent billing support for society management.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Second row centered with 2 cards -->
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow md:col-span-1 lg:col-span-2 lg:col-start-2"
+                        data-motion="scale" data-delay="300">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">description</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Subsidy & Documentation</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Complete assistance with government subsidy applications and paperwork handling.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow md:col-span-1 lg:col-span-2"
+                        data-motion="scale" data-delay="400">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">handyman</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Operation & Maintenance</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Ongoing support services to ensure optimal system performance year-round.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits for Housing Societies Section -->
+            <section class="flex flex-col gap-10" data-motion="zoom">
+                <div class="flex flex-col gap-4 text-center max-w-3xl mx-auto">
+                    <h2
+                        class="text-text-dark dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+                        Why Housing Societies Choose Us
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col gap-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-800 p-6 hover:shadow-lg transition-shadow"
+                        data-motion="bounce" data-delay="0">
+                        <div
+                            class="size-12 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center text-green-600 dark:text-green-400 mb-2">
+                            <span class="material-symbols-outlined text-2xl">savings</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Reduced Maintenance Costs</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Significant reduction in monthly maintenance costs for all residents.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow"
+                        data-motion="bounce" data-delay="100">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">power</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Reliable Power</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Consistent power supply for common areas with minimal grid dependency.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow"
+                        data-motion="bounce" data-delay="200">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">eco</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Environment-Friendly</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Community-wide sustainability initiative reducing carbon footprint.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 rounded-xl border border-blue-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-lg transition-shadow"
+                        data-motion="bounce" data-delay="300">
+                        <div
+                            class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                            <span class="material-symbols-outlined text-3xl">verified</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-text-dark dark:text-white text-xl font-bold">Professional Management</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                                Expertly managed solar assets with regular maintenance and monitoring.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+            <div class="w-full py-16 bg-gray-50 dark:bg-slate-900">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12" data-motion="fade-up">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-dark dark:text-white mb-4">Our Process</h2>
+                        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">We handle the complexity of
+                            committee
+                            approvals and technical installation so you don't have to.</p>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="absolute top-1/2 left-0 w-full h-1 bg-blue-100 dark:bg-white/10 -translate-y-1/2 hidden md:block z-0">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                            <div class="bg-white dark:bg-slate-800 p-6 rounded-lg border border-gray-200 dark:border-gray-700 flex flex-col items-center text-center gap-4 hover:shadow-lg transition-shadow"
+                                data-motion="slide-up" data-delay="0">
+                                <div
+                                    class="size-14 rounded-full bg-primary text-white font-bold text-xl flex items-center justify-center">
+                                    1</div>
+                                <h3 class="font-bold text-lg">Site Survey</h3>
+                                <p class="text-sm text-gray-500">Free technical assessment of rooftop area and shadow
+                                    analysis.</p>
+                            </div>
+                            <div class="bg-background-light dark:bg-background-dark p-6 rounded-xl border border-blue-200 dark:border-white/10 flex flex-col items-center text-center gap-4"
+                                data-motion="slide-up" data-delay="100">
+                                <div
+                                    class="size-14 rounded-full bg-white dark:bg-white/10 text-primary font-bold text-xl flex items-center justify-center border-4 border-background-light dark:border-background-dark shadow-sm">
+                                    2</div>
+                                <h3 class="font-bold text-lg">Proposal</h3>
+                                <p class="text-sm text-gray-500">Detailed financial savings report for Management
+                                    Committee
+                                    review.</p>
+                            </div>
+                            <div class="bg-background-light dark:bg-background-dark p-6 rounded-xl border border-blue-200 dark:border-white/10 flex flex-col items-center text-center gap-4"
+                                data-motion="slide-up" data-delay="200">
+                                <div
+                                    class="size-14 rounded-full bg-white dark:bg-white/10 text-primary font-bold text-xl flex items-center justify-center border-4 border-background-light dark:border-background-dark shadow-sm">
+                                    3</div>
+                                <h3 class="font-bold text-lg">AGM Approval</h3>
+                                <p class="text-sm text-gray-500">We assist in presenting benefits to residents during
+                                    the
+                                    Annual Meeting.</p>
+                            </div>
+                            <div class="bg-background-light dark:bg-background-dark p-6 rounded-xl border border-blue-200 dark:border-white/10 flex flex-col items-center text-center gap-4"
+                                data-motion="slide-up" data-delay="300">
+                                <div
+                                    class="size-14 rounded-full bg-white dark:bg-white/10 text-primary font-bold text-xl flex items-center justify-center border-4 border-background-light dark:border-background-dark shadow-sm">
+                                    4</div>
+                                <h3 class="font-bold text-lg">Installation</h3>
+                                <p class="text-sm text-gray-500">Fast execution with net-metering setup and grid
+                                    synchronization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full py-16 bg-[#0B1120] text-white">
+                <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row gap-12 items-center">
+                        <div class="lg:w-1/2 flex flex-col gap-6" data-motion="slide-right">
+                            <span class="text-primary font-bold tracking-wider uppercase text-sm">Financial
+                                Benefits</span>
+                            <h2 class="text-3xl md:text-5xl font-black leading-tight">Shared Savings Model</h2>
+                            <p class="text-gray-300 text-lg leading-relaxed">
+                                Most societies see an ROI within 3-4 years. Choose between investing directly (CAPEX) or
+                                paying only for power generated (OPEX/RESCO).
+                            </p>
+                            <div class="flex flex-col gap-4 mt-4">
+                                <div class="flex gap-4 items-start p-4 rounded-lg bg-white/5 border border-white/10">
+                                    <span
+                                        class="material-symbols-outlined text-primary mt-1">account_balance_wallet</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">CAPEX Model</h4>
+                                        <p class="text-sm text-gray-400 mt-1">Society owns the asset. 100% savings on
+                                            electricity generated. Break-even in ~3.5 years.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 items-start p-4 rounded-lg bg-white/5 border border-white/10">
+                                    <span class="material-symbols-outlined text-primary mt-1">handshake</span>
+                                    <div>
+                                        <h4 class="font-bold text-lg">OPEX (RESCO) Model</h4>
+                                        <p class="text-sm text-gray-400 mt-1">Zero investment. Pay a discounted tariff
+                                            for
+                                            solar power. Instant savings from Day 1.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 w-full" data-motion="slide-left">
+                            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/10">
+                                <h3 class="text-xl font-bold mb-6">Estimated Monthly Savings</h3>
+                                <div class="flex flex-col gap-6">
+                                    <div>
+                                        <div class="flex justify-between mb-2 text-sm font-medium">
+                                            <span class="text-gray-300">Current Grid Bill</span>
+                                            <span>₹4,200</span>
+                                        </div>
+                                        <div class="h-4 w-full bg-white/20 rounded-full overflow-hidden">
+                                            <div class="h-full bg-blue-800 w-full"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-2 text-sm font-medium">
+                                            <span class="text-gray-300">Bill with SolarForce</span>
+                                            <span class="text-primary">₹840</span>
+                                        </div>
+                                        <div class="h-4 w-full bg-white/20 rounded-full overflow-hidden">
+                                            <div class="h-full bg-primary w-[20%]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-8 pt-6 border-t border-white/10">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex flex-col">
+                                            <span class="text-3xl font-bold text-primary">80%</span>
+                                            <span class="text-xs uppercase tracking-wider text-gray-400">Bill
+                                                Reduction</span>
+                                        </div>
+                                        <div class="flex flex-col text-right">
+                                            <span class="text-3xl font-bold text-white">~25 Yrs</span>
+                                            <span class="text-xs uppercase tracking-wider text-gray-400">System
+                                                Life</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full py-16 bg-background-light dark:bg-background-dark">
+                <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-2xl font-bold text-center mb-10 text-text-dark dark:text-white"
+                        data-motion="fade-up">Society Frequently Asked
+                        Questions</h2>
+                    <div class="flex flex-col gap-4">
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                How much can our society save with solar?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Most housing societies can reduce their common area electricity bills by 70-90%
+                                depending on their consumption patterns and available rooftop space. With SolarForce's
+                                solutions, societies typically see annual savings ranging from ₹2-10 lakhs, with the
+                                system paying for itself in 3-4 years.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                Is there a government subsidy for housing societies?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Yes, housing societies are eligible for government subsidies under various state and
+                                central schemes. Subsidies typically range from ₹18,000 per kW, with maximum caps
+                                varying by state. SolarForce assists with the entire subsidy application process and
+                                documentation.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                How do we apply for the subsidy?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                SolarForce handles the entire subsidy application process on your behalf. We prepare all
+                                required documentation, liaise with government departments, and track the application
+                                until disbursement. Our team ensures compliance with all technical and administrative
+                                requirements.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                Does our society need an AGM (Annual General Meeting) approval to install solar?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Yes, most housing societies require AGM approval for installing a solar system since it
+                                involves common area usage and society funds. SolarForce provides comprehensive
+                                presentation materials and financial projections to help your management committee
+                                present the proposal effectively to residents.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                What is the typical payback period for a solar system?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                The payback period typically ranges from 3-4 years depending on your electricity
+                                tariffs, consumption patterns, available subsidies, and choice of components. After the
+                                payback period, your society enjoys 20+ years of virtually free electricity for common
+                                areas.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                What happens if solar generation is lower than expected?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                SolarForce provides a performance guarantee. If your system generates less than the
+                                promised units due to equipment issues (excluding weather variations), we compensate you
+                                for the shortfall. Our advanced monitoring system tracks performance in real-time to
+                                ensure optimal generation.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                How much rooftop space is needed for a solar installation?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Approximately 100 square feet of shadow-free rooftop space is needed for every 1 kW of
+                                solar capacity. Our engineers conduct a detailed site survey including shadow analysis
+                                to determine the optimal system size for your available rooftop area.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                What are the different financing options available?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                SolarForce offers flexible financing: CAPEX (society owns the system, maximum savings),
+                                OPEX/RESCO (zero investment, pay discounted tariff for generated power), and solar loans
+                                with attractive interest rates. Our team helps you choose the best model based on your
+                                society's financial situation.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                How do we ensure the safety and longevity of the solar installation?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                SolarForce uses premium components with 25+ year warranties and advanced mounting
+                                structures engineered to withstand extreme weather conditions. Our installations include
+                                lightning protection, proper earthing, and waterproofing to ensure a leak-free roof. We
+                                also offer comprehensive AMC packages for ongoing maintenance.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                What maintenance does a solar system require?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Solar systems require minimal maintenance—primarily periodic cleaning of panels (every
+                                15-30 days depending on location) and annual technical inspections. SolarForce offers
+                                Annual Maintenance Contracts (AMC) that include regular cleaning, system health checks,
+                                inverter monitoring, and prompt issue resolution.
+                            </div>
+                        </details>
+                        <details
+                            class="group rounded-xl bg-white dark:bg-white/5 border border-blue-100 dark:border-white/10 overflow-hidden">
+                            <summary
+                                class="flex cursor-pointer items-center justify-between p-5 font-semibold text-text-dark dark:text-white transition-colors hover:bg-gray-50 dark:hover:bg-white/10">
+                                Do we need roof access rights from top-floor residents?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <div class="px-5 pb-5 pt-0 text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Usually, the terrace is considered a common area belonging to the society. However, we
+                                recommend checking your specific society by-laws. SolarForce installs elevated
+                                structures that still allow the roof to be used for other purposes, minimizing any
+                                concerns from top-floor residents.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full py-12 md:py-20">
+                <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="rounded-3xl bg-primary p-8 md:p-12 relative overflow-hidden" data-motion="zoom">
+                        <div
+                            class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+                        </div>
+                        <div class="relative z-10 flex flex-col gap-6 items-center">
+                            <h2 class="text-3xl md:text-4xl font-black text-white max-w-2xl">Ready to cut your society's
+                                maintenance costs?</h2>
+                            <p class="text-white/80 text-lg font-medium max-w-xl">Get a free roof survey and a
+                                customized
+                                proposal for your upcoming Committee Meeting.</p>
+                            <a href="/go-solar?customerType=society"
+                                class="bg-text-dark text-white hover:bg-black transition-colors px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transform duration-200 inline-block">
+                                Get a Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Framer Motion scroll animations with multiple animation types
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const animationTypes = {
+                'fade-up': {
+                    initial: { opacity: 0, transform: 'translateY(40px)' },
+                    animate: { opacity: 1, transform: 'translateY(0)' },
+                    transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)'
+                },
+                'scale': {
+                    initial: { opacity: 0, transform: 'scale(0.8)' },
+                    animate: { opacity: 1, transform: 'scale(1)' },
+                    transition: 'opacity 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                },
+                'slide-left': {
+                    initial: { opacity: 0, transform: 'translateX(-60px)' },
+                    animate: { opacity: 1, transform: 'translateX(0)' },
+                    transition: 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
+                },
+                'slide-right': {
+                    initial: { opacity: 0, transform: 'translateX(60px)' },
+                    animate: { opacity: 1, transform: 'translateX(0)' },
+                    transition: 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)'
+                },
+                'zoom': {
+                    initial: { opacity: 0, transform: 'scale(1.2)' },
+                    animate: { opacity: 1, transform: 'scale(1)' },
+                    transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+                },
+                'bounce': {
+                    initial: { opacity: 0, transform: 'translateY(-30px)' },
+                    animate: { opacity: 1, transform: 'translateY(0)' },
+                    transition: 'opacity 0.5s ease-out, transform 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                }
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const motionType = element.dataset.motion;
+                        const delay = element.dataset.delay || 0;
+                        const animation = animationTypes[motionType];
+
+                        if (animation) {
+                            setTimeout(() => {
+                                element.style.opacity = animation.animate.opacity;
+                                element.style.transform = animation.animate.transform;
+                            }, delay);
+                        }
+
+                        observer.unobserve(element);
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animations to all elements with data-motion attribute
+            Object.keys(animationTypes).forEach(motionType => {
+                const elements = document.querySelectorAll(`[data-motion="${motionType}"]`);
+                elements.forEach(element => {
+                    const animation = animationTypes[motionType];
+                    element.style.opacity = animation.initial.opacity;
+                    element.style.transform = animation.initial.transform;
+                    element.style.transition = animation.transition;
+                    observer.observe(element);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<style>
+    .footer-3d-text {
+        font-size: clamp(4rem, 15vw, 12rem);
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 0.85;
+        /* Blue gradient on the text */
+        background: linear-gradient(180deg, #0052CC 0%, #003380 50%, #001a40 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        /* 3D perspective effect */
+        transform: perspective(500px) rotateX(25deg);
+        transform-origin: center bottom;
+        /* Fade out at the bottom */
+        -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+        /* Add some text shadow for depth */
+        text-shadow: 0 10px 30px rgba(0, 82, 204, 0.3);
+        /* Prevent text selection for cleaner look */
+        user-select: none;
+    }
+
+    .footer-3d-container {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 0;
+        margin-bottom: -2rem;
+    }
+</style>
+<footer class="bg-slate-900 text-white pt-12 pb-0 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 mb-4">
+                    <img src="/img/logo/logo.svg" alt="SolarForce" class="h-8 w-8">
+                    <span class="text-xl font-bold">SolarForce</span>
+                </div>
+                <p class="text-gray-400 text-sm">SolarForce helps homeowners avoid costly utiliy bills and save the
+                    environment
+                    by increasing their home's energy efficiency.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a class="hover:text-primary" href="/homes">Residential Solar</a></li>
+                    <li><a class="hover:text-primary" href="/commercial">Commercial Solar</a></li>
+                    <li><a class="hover:text-primary" href="/housing-society">Society Solutions</a></li>
+                    <li><a class="hover:text-primary" href="/calculator">Calculate Savings</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Support</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a class="hover:text-primary" href="/contact">Contact Us</a></li>
+                    <li><a class="hover:text-primary" href="/#faq">FAQs</a></li>
+                    <li><a class="hover:text-primary" href="/terms-of-use">Warranty Policy</a></li>
+                    <li><a class="hover:text-primary" href="/go-solar">Service Request</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Contact</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-primary text-xs">call</span> +91 9354932531
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-primary text-xs">mail</span>
+                        privatelimitedsolarforce@gmail.com
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="material-symbols-outlined text-primary text-xs">location_on</span> RZC 209-210 Ground
+                        Floor B-Block Arjun
+                        Park Nangli Sakrawati Najafragh, New Delhi
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="border-t border-gray-700 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <p>© 2026 SolarForce Private Limited. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy-policy" class="hover:text-primary">Privacy Policy</a>
+                <a href="/terms-of-use" class="hover:text-primary">Terms of Use</a>
+                <a href="/sitemap" class="hover:text-primary">Sitemap</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Perspective Brand Text -->
+    <div class="footer-3d-container mt-8">
+        <div class="flex justify-center items-end">
+            <span class="footer-3d-text">SolarForce</span>
+        </div>
+    </div>
+</footer>
