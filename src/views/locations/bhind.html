@@ -293,7 +293,7 @@
             </div>
         </div>
     </div>
-    <!--  <div class="w-full bg-text-main dark:bg-black py-16 text-white">
+    <div class="w-full bg-text-main dark:bg-black py-16 text-white">
         <div class="layout-container flex h-full grow flex-col">
             <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center">
                 <div
@@ -317,44 +317,94 @@
                     </div>
                     <div
                         class="w-full md:w-[400px] bg-white dark:bg-surface-dark rounded-xl p-6 text-text-main dark:text-white shadow-2xl">
-                        <form class="flex flex-col gap-4">
+                        <form id="locationLeadForm" class="flex flex-col gap-4">
                             <h3 class="text-lg font-bold mb-2">Request Free Site Visit</h3>
+                            <input type="hidden" name="city" value="bhind" />
+                            <input type="hidden" name="sourcePage" value="/locations/bhind" />
                             <div class="flex flex-col gap-1">
-                                <label class="text-xs font-semibold uppercase text-text-muted">Delhi Pincode</label>
-                                <input
+                                <label class="text-xs font-semibold uppercase text-text-muted">Your Name *</label>
+                                <input name="name" required
                                     class="h-10 rounded border border-border-light bg-surface-light px-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none text-black dark:text-black"
-                                    placeholder="e.g. 110075" type="text" />
+                                    placeholder="Enter your name" type="text" />
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-xs font-semibold uppercase text-text-muted">Bhind Pincode</label>
+                                <input name="pincode"
+                                    class="h-10 rounded border border-border-light bg-surface-light px-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none text-black dark:text-black"
+                                    placeholder="e.g. 477001" type="text" maxlength="6" pattern="[0-9]{6}" />
                             </div>
                             <div class="flex flex-col gap-1">
                                 <label class="text-xs font-semibold uppercase text-text-muted">Avg. Monthly
                                     Bill</label>
-                                <select
+                                <select name="monthlyBill"
                                     class="h-10 rounded border border-border-light bg-surface-light px-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none text-black dark:text-black">
-                                    <option>₹2,000 - ₹5,000</option>
-                                    <option>₹5,000 - ₹10,000</option>
-                                    <option>₹10,000+</option>
+                                    <option value="3500">₹2,000 - ₹5,000</option>
+                                    <option value="7500">₹5,000 - ₹10,000</option>
+                                    <option value="12000">₹10,000+</option>
                                 </select>
                             </div>
                             <div class="flex flex-col gap-1">
-                                <label class="text-xs font-semibold uppercase text-text-muted">Phone Number</label>
-                                <input
+                                <label class="text-xs font-semibold uppercase text-text-muted">Phone Number *</label>
+                                <input name="phone" required
                                     class="h-10 rounded border border-border-light bg-surface-light px-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none text-black dark:text-black"
                                     placeholder="+91 98765 43210" type="tel" />
                             </div>
-                            <button
+                            <button id="locationSubmitBtn"
                                 class="mt-2 flex w-full cursor-pointer items-center justify-center rounded-lg h-10 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors"
-                                type="button">
+                                type="submit">
                                 Check Availability &amp; Quote
                             </button>
                             <p class="text-[10px] text-center text-text-muted">Your data is secure. We don't spam.
                             </p>
                         </form>
+                        <div id="formSuccess" class="hidden text-center py-6">
+                            <div
+                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="material-symbols-outlined text-green-600 text-2xl">check_circle</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-1">Thank You!</h3>
+                            <p class="text-sm text-text-muted">Our team will contact you within 24 hours.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
+    <script>
+        document.getElementById('locationLeadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            data.customerType = 'residential';
+
+            const submitBtn = document.getElementById('locationSubmitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+
+            try {
+                const response = await fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.getElementById('locationLeadForm').classList.add('hidden');
+                    document.getElementById('formSuccess').classList.remove('hidden');
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+                alert('Something went wrong. Please try again or call us directly.');
+            }
+        });
+    </script>
 </body>
 
 </html>
