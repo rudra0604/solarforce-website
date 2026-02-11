@@ -12,10 +12,9 @@ locationRoutes.get('/rooftop-solar-in-delhi', async (c) => {
   return c.html(processed);
 });
 
+// Redirect old Gurugram URL to Haryana page
 locationRoutes.get('/rooftop-solar-in-gurugram', async (c) => {
-  const html = await Bun.file('./src/views/locations/gurugram.html').text();
-  const processed = await processHTML(html);
-  return c.html(processed);
+  return c.redirect('/rooftop-solar-in-haryana', 301);
 });
 
 locationRoutes.get('/rooftop-solar-in-ncr', async (c) => {

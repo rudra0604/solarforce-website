@@ -1,17 +1,11 @@
 [build]
-  command = "bun install"
-  publish = "public"
+  command = "bun install && bun run build:static"
+  publish = "dist"
 
-[build.environment]
-  NODE_VERSION = "18"
-
-[[edge_functions]]
-  function = "server"
-  path = "/*"
-
-[dev]
-  command = "bun run dev"
-  port = 3001
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
   for = "/*"
