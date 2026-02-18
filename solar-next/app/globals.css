@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Accordion Styles */
+.accordion-item input[type="checkbox"] {
+  display: none;
+}
+
+.accordion-item input[type="checkbox"]:checked ~ .accordion-content {
+  max-height: 1000px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  opacity: 1;
+  visibility: visible;
+}
+
+.accordion-item input[type="checkbox"]:checked ~ .accordion-title .material-symbols-outlined {
+  transform: rotate(180deg);
+}
+
+/* 3D Footer Text */
+.footer-3d-text {
+  font-size: clamp(4rem, 15vw, 12rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.85;
+  background: linear-gradient(180deg, #0052CC 0%, #003380 50%, #001a40 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: perspective(500px) rotateX(25deg);
+  transform-origin: center bottom;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+  text-shadow: 0 10px 30px rgba(0, 82, 204, 0.3);
+  user-select: none;
+}
+
+.footer-3d-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: -2rem;
+}
