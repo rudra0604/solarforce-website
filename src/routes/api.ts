@@ -80,12 +80,11 @@ apiRoutes.post('/calculate', async (c) => {
     );
 
     // Prepare calculator result for database
-    const calculatorData: any = {
-      pincode: pincode || null,
+    const calculatorData: CalculatorResult = {
+      pincode: pincode || '',
       city,
-      state: result.region,
       monthly_bill: parseFloat(monthlyBill),
-      rooftop_area: rooftopArea ? parseFloat(rooftopArea) : null,
+      rooftop_area: rooftopArea ? parseFloat(rooftopArea) : undefined,
       customer_type: customerType,
       recommended_capacity: result.recommendedCapacity,
       estimated_cost: result.estimatedCost,
@@ -95,7 +94,6 @@ apiRoutes.post('/calculate', async (c) => {
       annual_savings: result.annualSavings,
       lifetime_savings: result.lifetimeSavings,
       payback_period: result.paybackPeriod,
-      annual_generation: result.annualGeneration,
       co2_offset: result.co2Offset,
       trees_equivalent: result.treesEquivalent,
     };
@@ -315,11 +313,11 @@ apiRoutes.post('/ci-calculate', async (c) => {
       const leadData: Lead = {
         name: body.name,
         phone: body.phone,
-        email: body.email || null,
+        email: body.email || undefined,
         city: body.city || result.input.region,
         customer_type: body.customerSegment,
-        monthly_bill: body.monthlyBill || null,
-        rooftop_area: body.availableArea || null,
+        monthly_bill: body.monthlyBill || undefined,
+        rooftop_area: body.availableArea || undefined,
         message: `C&I Calculator - ${result.system.finalCapacity}kW ${body.ownershipModel.toUpperCase()} - ${body.companyName || 'N/A'}`,
         source_page: '/ci-calculator',
         status: 'new',

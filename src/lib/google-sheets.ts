@@ -22,7 +22,9 @@ export interface Lead {
 export interface CalculatorResult {
   id?: string;
   created_at?: string;
-  pincode: string;
+  pincode?: string;
+  city?: string;
+  state?: string;
   monthly_bill: number;
   rooftop_area?: number;
   customer_type: 'residential' | 'commercial' | 'housing-society';
@@ -34,6 +36,7 @@ export interface CalculatorResult {
   annual_savings: number;
   lifetime_savings: number;
   payback_period: number;
+  annual_generation: number;
   co2_offset: number;
   trees_equivalent: number;
   lead_id?: string;
@@ -137,6 +140,8 @@ export const calculatorResultsDB = {
   async insert(result: CalculatorResult): Promise<{ data: CalculatorResult | null, error: any }> {
     const apiResult = await sendToAppsScript('calculator', {
       pincode: result.pincode,
+      city: result.city,
+      state: result.state,
       monthlyBill: result.monthly_bill,
       rooftopArea: result.rooftop_area,
       customerType: result.customer_type,
@@ -148,6 +153,7 @@ export const calculatorResultsDB = {
       annualSavings: result.annual_savings,
       lifetimeSavings: result.lifetime_savings,
       paybackPeriod: result.payback_period,
+      annualGeneration: result.annual_generation,
       co2Offset: result.co2_offset,
       treesEquivalent: result.trees_equivalent,
       leadId: result.lead_id || '',
