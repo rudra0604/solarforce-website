@@ -12,46 +12,48 @@ const apiRoutes = new Hono();
 apiRoutes.post('/leads', async (c) => {
   try {
     const body = await c.req.json();
-    
+
     // Validate required fields
     const { name, phone, city, customerType, sourcePage } = body;
-    
+
     if (!name || !phone || !city || !customerType) {
       return c.json({ success: false, error: 'Missing required fields' }, 400);
     }
-    
+
     // Prepare lead data
     const leadData: Lead = {
       name,
       phone,
-      email: body.email || null,
+      email: body.email || undefined,
       city,
       customer_type: customerType,
-      monthly_bill: body.monthlyBill || null,
-      rooftop_area: body.rooftopArea || null,
-      message: body.message || null,
+      monthly_bill: body.monthlyBill || undefined,
+      rooftop_area: body.rooftopArea || undefined,
+      message: body.message || undefined,
       source_page: sourcePage || '/',
       status: 'new',
     };
-    
+
     // Save to Google Sheets
     const { data, error } = await leadsDB.insert(leadData);
-    
+
     if (error) {
       console.error('Google Sheets error:', error);
       return c.json({ success: false, error: 'Database error' }, 500);
     }
-    
+
     // Send email notifications asynchronously (don't wait)
     Promise.all([
       sendLeadNotification(leadData),
       sendThankYouEmail(leadData)
     ]).catch(err => console.error('Email notification failed:', err));
-    
-    return c.json({ 
-      success: true, 
+
+    const referenceId = data?.id ? `SF-${data.id.split('-')[0].toUpperCase()}` : 'SF-REF';
+
+    return c.json({
+      success: true,
       message: 'Thank you! Our team will contact you within 24 hours.',
-      referenceId: `SF-${data.id.split('-')[0].toUpperCase()}`
+      referenceId
     });
   } catch (error) {
     console.error('Lead submission error:', error);
@@ -64,11 +66,11 @@ apiRoutes.post('/calculate', async (c) => {
   try {
     const body = await c.req.json();
     const { monthlyBill, city, customerType, rooftopArea, pincode, saveLead } = body;
-    
+
     if (!monthlyBill || !city || !customerType) {
       return c.json({ success: false, error: 'Missing required fields' }, 400);
     }
-    
+
     // Perform calculation
     const result = performCompleteCalculation(
       parseFloat(monthlyBill),
@@ -76,7 +78,7 @@ apiRoutes.post('/calculate', async (c) => {
       customerType,
       rooftopArea ? parseFloat(rooftopArea) : undefined
     );
-    
+
     // Prepare calculator result for database
     const calculatorData: any = {
       pincode: pincode || null,
@@ -97,36 +99,36 @@ apiRoutes.post('/calculate', async (c) => {
       co2_offset: result.co2Offset,
       trees_equivalent: result.treesEquivalent,
     };
-    
+
     // Save to database
     const { data: calcData, error: calcError } = await calculatorResultsDB.insert(calculatorData);
-    
+
     if (calcError) {
       console.error('Calculator save error:', calcError);
       // Don't fail the request if database save fails
     }
-    
+
     // If user provides contact info, create a lead
     if (saveLead && body.name && body.phone) {
       const leadData: Lead = {
         name: body.name,
         phone: body.phone,
-        email: body.email || null,
+        email: body.email || undefined,
         city,
         customer_type: customerType,
         monthly_bill: parseFloat(monthlyBill),
-        rooftop_area: rooftopArea ? parseFloat(rooftopArea) : null,
+        rooftop_area: rooftopArea ? parseFloat(rooftopArea) : undefined,
         source_page: '/calculator',
         status: 'new',
       };
-      
+
       const { data: leadResult, error: leadError } = await leadsDB.insert(leadData);
-      
+
       if (!leadError && leadResult) {
         // Note: Google Sheets doesn't support linking like SQL, 
         // but we can store the lead_id in the calculator result
         // by re-inserting with the lead_id (or update if you implement update function)
-        
+
         // Send notifications
         Promise.all([
           sendLeadNotification(leadData),
@@ -134,30 +136,30 @@ apiRoutes.post('/calculate', async (c) => {
         ]).catch(err => console.error('Email notification failed:', err));
       }
     }
-    
+
     return c.json({
       success: true,
       calculation: {
         // System specs
         recommendedCapacity: result.recommendedCapacity,
         requiredArea: result.requiredArea,
-        
+
         // Financial
         estimatedCost: result.estimatedCost,
         subsidyAmount: result.subsidyAmount,
         netCost: result.netCost,
-        
+
         // Savings
         monthlySavings: result.monthlySavings,
         annualSavings: result.annualSavings,
         lifetimeSavings: result.lifetimeSavings,
         paybackPeriod: result.paybackPeriod,
-        
+
         // Environmental
         annualGeneration: result.annualGeneration,
         co2Offset: result.co2Offset,
         treesEquivalent: result.treesEquivalent,
-        
+
         // Metadata
         region: result.region,
         avgTariff: result.avgTariff,
@@ -174,11 +176,11 @@ apiRoutes.post('/contact', async (c) => {
   try {
     const body = await c.req.json();
     const { name, email, phone, message, subject, sourcePage } = body;
-    
+
     if (!name || !email || !message) {
       return c.json({ success: false, error: 'Missing required fields' }, 400);
     }
-    
+
     // Save contact submission as a lead
     const contactLead: Lead = {
       name,
@@ -190,18 +192,18 @@ apiRoutes.post('/contact', async (c) => {
       source_page: sourcePage || '/contact',
       status: 'new',
     };
-    
+
     const { error } = await leadsDB.insert(contactLead);
-    
+
     if (error) {
       console.error('Contact submission error:', error);
     }
-    
+
     // Also send email notification
     sendLeadNotification(contactLead).catch(err => console.error('Email failed:', err));
-    
-    return c.json({ 
-      success: true, 
+
+    return c.json({
+      success: true,
       message: 'Message received! We\'ll get back to you soon.'
     });
   } catch (error) {
@@ -214,15 +216,15 @@ apiRoutes.post('/subscribe', async (c) => {
   try {
     const body = await c.req.json();
     const { email } = body;
-    
+
     if (!email || !email.includes('@')) {
       return c.json({ success: false, error: 'Invalid email' }, 400);
     }
-    
+
     console.log('Newsletter subscription:', email);
-    
-    return c.json({ 
-      success: true, 
+
+    return c.json({
+      success: true,
       message: 'Thank you for subscribing!'
     });
   } catch (error) {
@@ -232,8 +234,8 @@ apiRoutes.post('/subscribe', async (c) => {
 
 // Health check
 apiRoutes.get('/health', (c) => {
-  return c.json({ 
-    status: 'healthy', 
+  return c.json({
+    status: 'healthy',
     timestamp: new Date().toISOString(),
     version: '1.0.0'
   });
@@ -262,24 +264,24 @@ apiRoutes.get('/health', (c) => {
 apiRoutes.post('/ci-calculate', async (c) => {
   try {
     const body = await c.req.json();
-    
+
     // Validate required fields
     if (!body.city && !body.pincode) {
       return c.json({ success: false, error: 'City or pincode is required' }, 400);
     }
-    
+
     if (!body.monthlyConsumption && !body.monthlyBill) {
       return c.json({ success: false, error: 'Monthly consumption or bill is required' }, 400);
     }
-    
+
     if (!body.customerSegment || !['industrial', 'commercial'].includes(body.customerSegment)) {
       return c.json({ success: false, error: 'Valid customer segment (industrial/commercial) is required' }, 400);
     }
-    
+
     if (!body.ownershipModel || !['capex', 'opex'].includes(body.ownershipModel)) {
       return c.json({ success: false, error: 'Valid ownership model (capex/opex) is required' }, 400);
     }
-    
+
     // Build calculator input
     const input: CICalculatorInput = {
       city: body.city || '',
@@ -304,10 +306,10 @@ apiRoutes.post('/ci-calculate', async (c) => {
       discountRate: body.discountRate ? parseFloat(body.discountRate) : undefined,
       tariffEscalation: body.tariffEscalation ? parseFloat(body.tariffEscalation) : undefined,
     };
-    
+
     // Perform calculation
     const result = performCICalculation(input);
-    
+
     // Optionally save lead if contact info provided
     if (body.saveLead && body.name && body.phone) {
       const leadData: Lead = {
@@ -322,29 +324,29 @@ apiRoutes.post('/ci-calculate', async (c) => {
         source_page: '/ci-calculator',
         status: 'new',
       };
-      
+
       // Save lead asynchronously
       leadsDB.insert(leadData).then(({ error }) => {
         if (error) console.error('Lead save error:', error);
       });
-      
+
       // Send notifications asynchronously
       Promise.all([
         sendLeadNotification(leadData),
         sendThankYouEmail(leadData),
       ]).catch(err => console.error('Email error:', err));
     }
-    
+
     return c.json({
       success: true,
       calculation: result,
     });
-    
+
   } catch (error) {
     console.error('C&I calculation error:', error);
-    return c.json({ 
-      success: false, 
-      error: error instanceof Error ? error.message : 'Calculation failed' 
+    return c.json({
+      success: false,
+      error: error instanceof Error ? error.message : 'Calculation failed'
     }, 500);
   }
 });
@@ -355,7 +357,7 @@ apiRoutes.post('/ci-calculate', async (c) => {
  */
 apiRoutes.get('/ci-regions', (c) => {
   const { regionData } = require('../lib/ci-calculator');
-  
+
   const regions = Object.entries(regionData).map(([key, data]: [string, any]) => ({
     id: key,
     name: data.name,
@@ -363,7 +365,7 @@ apiRoutes.get('/ci-regions', (c) => {
     avgTariffIndustrial: data.avgTariffIndustrial,
     avgTariffCommercial: data.avgTariffCommercial,
   }));
-  
+
   return c.json({ success: true, regions });
 });
 
