@@ -6,8 +6,9 @@
   "scripts": {
     "start": "bun run src/server.ts",
     "dev": "bun --watch run src/server.ts",
-    "build": "bun build src/server.ts --outdir ./dist --target bun",
-    "build:node": "bun build src/index.node.ts --outdir ./dist --target node",
+    "postinstall": "node scripts/generate-templates.js",
+    "build": "node scripts/generate-templates.js && bun build src/server.ts --outdir ./dist --target bun",
+    "build:node": "node scripts/generate-templates.js && bun build src/index.node.ts --outdir ./dist --target node",
     "start:node": "node dist/index.node.js",
     "build:static": "bun run scripts/build-static.ts",
     "generate-sitemap": "bun run scripts/generate-sitemap.ts"
