@@ -2,20 +2,25 @@
 
 Premium solar solutions website with calculators, lead management, and location-based pages.
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Node.js)
+
+You can run this project using **Node.js** (v18+) or **Bun**.
 
 ```bash
 # Install dependencies
-bun install
+npm install
 
 # Start development server
-bun run dev
+npm run dev
 
-# Build static files
-bun run build:static
+# Build for Node.js (Hostinger/VPS)
+npm run build:node
+
+# Start Node.js production server
+npm run start:node
 ```
 
-Visit: http://localhost:3001
+Visit: http://localhost:3000
 
 ## 📁 Project Structure
 
@@ -40,65 +45,32 @@ solar-main/
 │   │   └── solutions.ts         # Solutions page routes
 │   │
 │   ├── utils/                    # Helper utilities
-│   │   └── componentInjector.ts # Injects navbar/footer
+│   │   ├── componentInjector.ts # Injects navbar/footer (Server-side)
+│   │   └── fileReader.ts        # Cross-platform file reader
 │   │
 │   ├── views/                    # HTML pages
 │   │   ├── index.html           # Homepage
-│   │   ├── calculator.html      # Residential calculator
-│   │   ├── ci-calculator.html   # C&I calculator
+│   │   ├── calculator.html      # Residential calculator UI
+│   │   ├── ci-calculator.html   # C&I calculator UI
 │   │   ├── go-solar.html        # Quote form
-│   │   ├── about.html           # About page
-│   │   ├── contact.html         # Contact page
-│   │   ├── sitemap.html         # Sitemap
-│   │   ├── thank-you.html       # Thank you page
-│   │   ├── 404.html             # Error page
-│   │   │
 │   │   ├── offer/               # Offer pages
-│   │   │   ├── residential.html
-│   │   │   ├── commercial.html
-│   │   │   └── housing-society.html
-│   │   │
 │   │   ├── locations/           # City-specific pages
-│   │   │   ├── delhi.html
-│   │   │   ├── gurugram.html
-│   │   │   ├── ncr.html
-│   │   │   ├── gwalior.html
-│   │   │   ├── indore.html
-│   │   │   └── Bhind.html
-│   │   │
 │   │   ├── solutions/           # Solution type pages
-│   │   │   ├── on-grid.html
-│   │   │   ├── off-grid.html
-│   │   │   └── hybrid.html
-│   │   │
 │   │   └── legal/               # Legal pages
-│   │       ├── privacy-policy.html
-│   │       └── terms-of-use.html
 │   │
-│   └── server.ts                 # Main Hono server
+│   ├── index.node.ts             # Node.js entry point (Hostinger)
+│   └── server.ts                 # Main Hono server logic
 │
-├── public/                       # Static assets
-│   ├── js/                       # Client-side JavaScript
-│   │   ├── calculator.js        # Residential calculator UI
-│   │   ├── ci-calculator.js     # C&I calculator UI
-│   │   ├── navbar-scroll.js     # Navbar scroll effects
-│   │   └── scroll-animations.js # Page animations
-│   │
-│   ├── img/                      # Images
-│   ├── robots.txt               # SEO robots file
-│   └── sitemap.xml              # SEO sitemap
-│
-├── scripts/                      # Build & utility scripts
-│   ├── build-static.ts          # Static site generator
-│   ├── cleanHTML.ts             # HTML minifier
-│   └── google-apps-script.js    # Google Sheets script
-│
-├── dist/                         # Build output (generated)
+├── api/                          # Vercel Serverless Function entry point
+├── public/                       # Static assets (images, js, css)
+├── scripts/                      # Utility scripts
+├── dist/                         # Build output
 │
 ├── .env.example                  # Environment template
 ├── package.json                  # Dependencies & scripts
 ├── tsconfig.json                 # TypeScript config
-├── SETUP_GUIDE.md               # Detailed setup instructions
+├── vercel.json                   # Vercel configuration
+├── DEPLOY_VERCEL.md              # Vercel deployment guide
 └── README.md                     # This file
 ```
 
@@ -106,10 +78,10 @@ solar-main/
 
 | Script | Command | Description |
 |--------|---------|-------------|
-| Dev Server | `bun run dev` | Start with hot reload |
-| Production | `bun run start` | Start production server |
-| Build Static | `bun run build:static` | Generate static HTML files |
-| Generate Sitemap | `bun run generate-sitemap` | Update sitemap.xml |
+| Dev Server | `npm run dev` | Start with hot reload (uses Bun locally) |
+| Build (Node) | `npm run build:node` | Bundle for Node.js production |
+| Start (Node) | `npm run start:node` | Start built Node.js server |
+| Build Static | `npm run build:static` | Generate static HTML files |
 
 ## 🔧 Configuration
 
@@ -117,12 +89,11 @@ Copy `.env.example` to `.env` and configure:
 
 ```env
 # Server
-PORT=3001
-NODE_ENV=development
+PORT=3000   # Node.js default
+NODE_ENV=production
 
 # Google Sheets Database
-GOOGLE_SHEETS_API_KEY=your_api_key
-GOOGLE_SPREADSHEET_ID=your_spreadsheet_id
+GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
 
 # Email Notifications (Gmail)
 SMTP_HOST=smtp.gmail.com
@@ -132,58 +103,33 @@ SMTP_PASS=your_app_password
 ADMIN_EMAIL=admin@solarforce.in
 
 # Site URL
-SITE_URL=http://localhost:3001
+SITE_URL=https://your-domain.com
 ```
 
-## 📡 API Endpoints
+## 🚀 Deployment
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/api/leads` | POST | Submit lead form |
-| `/api/contact` | POST | Submit contact form |
-| `/api/calculate` | POST | Residential calculator |
-| `/api/ci-calculate` | POST | C&I calculator |
-| `/api/health` | GET | Health check |
+### Option 1: Vercel (Recommended for Free Hosting)
+This project is configured for Vercel.
+1. Push to GitHub.
+2. Import project in Vercel.
+3. Add Environment Variables.
+4. Deploy!
 
-## 🌐 Pages
+See [DEPLOY_VERCEL.md](./DEPLOY_VERCEL.md) for details.
 
-### Main Pages
-- `/` - Homepage
-- `/go-solar` - Quote request form
-- `/calculator` - Residential solar calculator
-- `/ci-calculator` - Commercial/Industrial calculator
-- `/about` - About us
-- `/contact` - Contact page
-- `/sitemap` - Site map
-
-### Offer Pages
-- `/residential` - Residential solar
-- `/commercial` - Commercial solar
-- `/housing-society` - Society solar
-
-### Location Pages
-- `/rooftop-solar-in-delhi`
-- `/rooftop-solar-in-gurugram`
-- `/rooftop-solar-in-ncr`
-- `/rooftop-solar-in-gwalior`
-- `/rooftop-solar-in-indore`
-
-### Solution Pages
-- `/on-grid` - Grid-tied systems
-- `/off-grid` - Off-grid systems
-- `/hybrid` - Hybrid systems
-
-## 📖 Documentation
-
-See [SETUP_GUIDE.md](./SETUP_GUIDE.md) for detailed setup instructions.
+### Option 2: Hostinger / VPS (Node.js)
+1. Run `npm run build:node` locally.
+2. Upload `dist/index.node.js` and `package.json` to your server.
+3. Set startup command: `node index.node.js`.
+4. Ensure environment variables are set.
 
 ## 🛡️ Tech Stack
 
-- **Runtime**: Bun
+- **Runtime**: Node.js & Bun (Cross-compatible)
 - **Framework**: Hono
-- **Database**: Google Sheets
+- **Database**: Google Sheets (via Apps Script)
 - **Email**: Nodemailer (Gmail SMTP)
-- **Styling**: TailwindCSS
+- **Styling**: TailwindCSS / Vanilla CSS
 - **Language**: TypeScript
 
 ---
