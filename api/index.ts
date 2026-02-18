@@ -1,3 +1,8 @@
+import { handle } from 'hono/vercel';
 import { app } from '../src/server';
 
-export default app.fetch;
+export const config = {
+    runtime: 'nodejs',
+};
+
+export default handle(app);

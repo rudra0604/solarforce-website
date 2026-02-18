@@ -1,10 +1,10 @@
 import { Hono } from 'hono';
-import { serveStatic } from 'hono/bun';
 import { logger } from 'hono/logger';
 import { compress } from 'hono/compress';
 import { cors } from 'hono/cors';
 import { secureHeaders } from 'hono/secure-headers';
 import { processHTML } from './utils/componentInjector';
+import { readFile } from './utils/fileReader';
 
 // Import routes
 import { homeRoutes } from './routes/home';
@@ -31,13 +31,17 @@ app.use('*', secureHeaders({
   crossOriginEmbedderPolicy: false,
 }));
 
-// Static files
-app.use('/assets/*', serveStatic({ root: './public' }));
-app.use('/img/*', serveStatic({ root: './public' }));
-app.use('/css/*', serveStatic({ root: './public' }));
-app.use('/js/*', serveStatic({ root: './public' }));
-app.use('/logo.svg', serveStatic({ path: './logo.svg' }));
-app.use('/favicon.ico', serveStatic({ path: './public/assets/images/fav-icon/favicon.ico' }));
+// Static files — only use Bun's serveStatic when running on Bun
+// On Vercel, static files in /public are served automatically
+if (typeof globalThis.Bun !== 'undefined') {
+  const { serveStatic } = await import('hono/bun');
+  app.use('/assets/*', serveStatic({ root: './public' }));
+  app.use('/img/*', serveStatic({ root: './public' }));
+  app.use('/css/*', serveStatic({ root: './public' }));
+  app.use('/js/*', serveStatic({ root: './public' }));
+  app.use('/logo.svg', serveStatic({ path: './logo.svg' }));
+  app.use('/favicon.ico', serveStatic({ path: './public/img/logo/logo.svg' }));
+}
 
 // Mount routes
 app.route('/', homeRoutes);
@@ -48,27 +52,27 @@ app.route('/api', apiRoutes);
 
 // Legal pages
 app.get('/legal/privacy', async (c) => {
-  const html = await Bun.file('./src/views/legal/privacy-policy.html').text();
+  const html = await readFile('./src/views/legal/privacy-policy.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 app.get('/legal/terms', async (c) => {
-  const html = await Bun.file('./src/views/legal/terms-of-use.html').text();
+  const html = await readFile('./src/views/legal/terms-of-use.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 // Sitemap page
 app.get('/sitemap', async (c) => {
-  const html = await Bun.file('./src/views/sitemap.html').text();
+  const html = await readFile('./src/views/sitemap.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 // Sitemap XML
 app.get('/sitemap.xml', async (c) => {
-  const sitemap = await Bun.file('./public/sitemap.xml').text();
+  const sitemap = await readFile('./public/sitemap.xml');
   return c.text(sitemap, 200, { 'Content-Type': 'application/xml' });
 });
 
@@ -82,7 +86,7 @@ Sitemap: https://www.solarforce.in/sitemap.xml`, 200, { 'Content-Type': 'text/pl
 
 // 404 handler
 app.notFound(async (c) => {
-  const html = await Bun.file('./src/views/404.html').text();
+  const html = await readFile('./src/views/404.html');
   // Do not process HTML for 404 pages to avoid adding navbar/footer
   return c.html(html, 404);
 });

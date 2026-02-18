@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { processHTML } from '../utils/componentInjector';
+import { readFile } from '../utils/fileReader';
 
 const locationRoutes = new Hono();
 
@@ -7,7 +8,7 @@ const locationRoutes = new Hono();
 
 // Delhi NCR Region
 locationRoutes.get('/rooftop-solar-in-delhi', async (c) => {
-  const html = await Bun.file('./src/views/locations/delhi.html').text();
+  const html = await readFile('./src/views/locations/delhi.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
@@ -18,39 +19,39 @@ locationRoutes.get('/rooftop-solar-in-gurugram', async (c) => {
 });
 
 locationRoutes.get('/rooftop-solar-in-ncr', async (c) => {
-  const html = await Bun.file('./src/views/locations/ncr.html').text();
+  const html = await readFile('./src/views/locations/ncr.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 locationRoutes.get('/rooftop-solar-in-haryana', async (c) => {
-  const html = await Bun.file('./src/views/locations/haryana.html').text();
+  const html = await readFile('./src/views/locations/haryana.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 // Madhya Pradesh Region
 locationRoutes.get('/rooftop-solar-in-gwalior', async (c) => {
-  const html = await Bun.file('./src/views/locations/gwalior.html').text();
+  const html = await readFile('./src/views/locations/gwalior.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 locationRoutes.get('/rooftop-solar-in-indore', async (c) => {
-  const html = await Bun.file('./src/views/locations/indore.html').text();
+  const html = await readFile('./src/views/locations/indore.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 locationRoutes.get('/rooftop-solar-in-bhind', async (c) => {
-  const html = await Bun.file('./src/views/locations/bhind.html').text();
+  const html = await readFile('./src/views/locations/bhind.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });
 
 // Contact page for locations
 locationRoutes.get('/contact', async (c) => {
-  const html = await Bun.file('./src/views/contact.html').text();
+  const html = await readFile('./src/views/contact.html');
   const processed = await processHTML(html);
   return c.html(processed);
 });

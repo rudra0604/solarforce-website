@@ -1,8 +1,8 @@
 /**
- * Google Apps Script - Solar Force Form Handler
+ * Google Apps Script - Solar Force Form Handler & Email System
  * 
- * This script receives form submissions from your website
- * and saves them to your Google Sheet.
+ * This script receives form submissions, saves them to Google Sheets,
+ * and sends email notifications directly (no SMTP server needed).
  * 
  * SETUP INSTRUCTIONS:
  * 1. In your Google Sheet, go to Extensions → Apps Script
@@ -13,12 +13,14 @@
  * 6. Set "Execute as" to "Me"
  * 7. Set "Who has access" to "Anyone"
  * 8. Click Deploy and authorize when prompted
- * 9. Copy the Web App URL and add it to your .env file
+ * 9. Copy the Web App URL and use it in your frontend code
  */
 
-// Configuration - Sheet name where leads are saved
+// Configuration
 const LEADS_SHEET_NAME = 'Leads';
 const CALCULATOR_SHEET_NAME = 'CalculatorResults';
+const ADMIN_EMAIL = 'rudransha04@gmail.com'; // Replace with your admin email
+const SENDER_NAME = 'SolarForce Team';
 
 /**
  * Handle POST requests from the website
@@ -57,14 +59,14 @@ function doGet(e) {
     return ContentService
         .createTextOutput(JSON.stringify({
             success: true,
-            message: 'Solar Force Form API is running!',
+            message: 'Solar Force Form & Email API is running!',
             timestamp: new Date().toISOString()
         }))
         .setMimeType(ContentService.MimeType.JSON);
 }
 
 /**
- * Save a lead to the Leads sheet
+ * Save a lead to the Leads sheet and send emails
  */
 function saveLead(data) {
     const sheet = getOrCreateSheet(LEADS_SHEET_NAME, [
@@ -99,10 +101,23 @@ function saveLead(data) {
 
     sheet.appendRow(row);
 
+    // Send notifications
+    try {
+        if (ADMIN_EMAIL) {
+            sendLeadNotification(data);
+        }
+        if (data.email) {
+            sendThankYouEmail(data);
+        }
+    } catch (e) {
+        // Don't fail the request if email fails
+        Logger.log('Email error: ' + e.toString());
+    }
+
     return {
         success: true,
         id: id,
-        message: 'Lead saved successfully!'
+        message: 'Lead saved and emails sent successfully!'
     };
 }
 
@@ -146,11 +161,88 @@ function saveCalculatorResult(data) {
 
     sheet.appendRow(row);
 
+    // If contact info is present (saveLead=true was used), send emails
+    if (data.saveLead && data.email && data.name) {
+        try {
+            if (ADMIN_EMAIL) {
+                sendLeadNotification(data);
+            }
+            sendThankYouEmail(data);
+        } catch (e) {
+            Logger.log('Email error: ' + e.toString());
+        }
+    }
+
     return {
         success: true,
         id: id,
         message: 'Calculator result saved successfully!'
     };
+}
+
+/**
+ * Send lead notification to Admin
+ */
+function sendLeadNotification(lead) {
+    const subject = `🌞 New Solar Lead: ${lead.name} (${lead.city || 'Unknown City'})`;
+    const body = `
+New Lead Details:
+----------------
+Name: ${lead.name}
+Phone: ${lead.phone}
+Email: ${lead.email}
+City: ${lead.city}
+Customer Type: ${lead.customerType || lead.customer_type}
+Monthly Bill: Rs. ${lead.monthlyBill || lead.monthly_bill || 'N/A'}
+Message: ${lead.message || 'N/A'}
+
+Source: ${lead.sourcePage || lead.source_page || 'Website'}
+Timestamp: ${new Date().toLocaleString()}
+    `;
+
+    MailApp.sendEmail({
+        to: ADMIN_EMAIL,
+        subject: subject,
+        body: body
+    });
+}
+
+/**
+ * Send thank you email to Customer
+ */
+function sendThankYouEmail(lead) {
+    const subject = "Thank you for contacting SolarForce! ☀️";
+
+    // HTML Template
+    const htmlBody = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+        <div style="background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%); padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+            <h1 style="color: white; margin: 0; font-size: 24px;">SolarForce</h1>
+        </div>
+        <div style="padding: 20px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 8px 8px;">
+            <p>Dear ${lead.name},</p>
+            <p>Thank you for your interest in SolarForce! We have received your inquiry.</p>
+            <p>Our solar experts will review your details and contact you shortly (usually within 24 hours).</p>
+            
+            <div style="background: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                <p style="margin: 0; font-weight: bold;">Your Request Details:</p>
+                <ul style="margin: 10px 0 0 0; padding-left: 20px;">
+                    <li>City: ${lead.city}</li>
+                    <li>Status: Received</li>
+                </ul>
+            </div>
+
+            <p>Best regards,<br>The SolarForce Team</p>
+        </div>
+    </div>
+    `;
+
+    MailApp.sendEmail({
+        to: lead.email,
+        subject: subject,
+        htmlBody: htmlBody,
+        name: SENDER_NAME
+    });
 }
 
 /**
@@ -183,22 +275,4 @@ function getOrCreateSheet(sheetName, headers) {
  */
 function generateId() {
     return Utilities.getUuid().split('-')[0].toUpperCase();
-}
-
-/**
- * Test function - run this to verify the script works
- */
-function testSaveLead() {
-    const testData = {
-        name: 'Test User',
-        email: 'test@example.com',
-        phone: '+91 9876543210',
-        city: 'Delhi',
-        customerType: 'residential',
-        monthlyBill: '3500',
-        sourcePage: '/test'
-    };
-
-    const result = saveLead(testData);
-    Logger.log(result);
 }
