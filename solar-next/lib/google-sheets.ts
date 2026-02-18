@@ -104,6 +104,7 @@ export const leadsDB = {
       phone: lead.phone,
       city: lead.city,
       customerType: lead.customer_type,
+      pincode: lead.pincode || '',
       monthlyBill: lead.monthly_bill?.toString() || '',
       rooftopArea: lead.rooftop_area?.toString() || '',
       message: lead.message || '',

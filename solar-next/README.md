@@ -1,6 +1,7 @@
+
 # ☀️ SolarForce (Next.js Version)
 
-This is the **Next.js** migration of the SolarForce website. It replaces the original Hono + HTML setup with a modern React framework.
+This is the **Next.js** migration of the SolarForce website. It replaces the original Hono + HTML setup with a modern React framework using the App Router.
 
 ## 🚀 Getting Started
 
@@ -9,7 +10,7 @@ This is the **Next.js** migration of the SolarForce website. It replaces the ori
     cd solar-next
     ```
 
-2.  Install dependencies (if not already):
+2.  Install dependencies:
     ```bash
     npm install
     ```
@@ -23,42 +24,48 @@ This is the **Next.js** migration of the SolarForce website. It replaces the ori
 
 ## 📁 Project Structure
 
-*   `app/` - Pages and Routing (App Router)
-    *   `page.tsx` - Homepage
-    *   `layout.tsx` - Main layout (includes Navbar/Footer)
-    *   `globals.css` - Global styles
-*   `components/` - Reusable React components
-    *   `Navbar.tsx`
-    *   `Footer.tsx`
-*   `lib/` - Shared logic (Google Sheets, Email, Calculator)
-*   `public/` - Static assets (images, fonts)
+*   **`app/`** - Pages and Routing (App Router)
+    *   `page.tsx` - Homepage (/)
+    *   `about-us/page.tsx` - About Us (/about-us)
+    *   `contact/page.tsx` - Contact Us (/contact)
+    *   `go-solar/page.tsx` - Lead Capture Form (/go-solar)
+    *   `calculator/page.tsx` - Residential Solar Calculator (/calculator)
+    *   `thank-you/page.tsx` - Success Page (/thank-you)
+    *   `api/leads/route.ts` - Leads API Endpoint
+*   **`components/`** - Reusable React components
+    *   `Navbar.tsx`, `Footer.tsx` - Layout components
+    *   `SolarQuoteForm.tsx` - Client-side form logic
+    *   `SolarCalculator.tsx` - Interactive calculator logic
+*   **`lib/`** - Shared logic
+    *   `google-sheets.ts` - Database integration
+    *   `email.ts` - Nodemailer setup
+    *   `pincodes.ts` - Location database for calculator
 
-## 🛠️ How to Add More Pages
+## 🔑 Environment Variables
 
-To add a new page (e.g., `/about-us`):
+Create a `.env` file in the `solar-next` directory with the following keys for full functionality:
 
-1.  Create a folder `app/about-us`.
-2.  Create a file `page.tsx` inside it.
-3.  Paste the HTML content (converted to JSX) inside the default export function.
+```env
+# Email Configuration (Nodemailer)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+ADMIN_EMAIL=admin@solarforce.com
 
-**Example:**
-```tsx
-export default function AboutPage() {
-  return (
-    <div className="container mx-auto py-10">
-      <h1 className="text-3xl font-bold">About Us</h1>
-      <p>Content here...</p>
-    </div>
-  );
-}
+# Google Sheets Backend
+GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/your-script-id/exec
+
+# Site URL (for email links)
+SITE_URL=https://your-domain.com
 ```
 
 ## 📦 Deployment (Vercel)
 
 This project is **Vercel-native**. To deploy:
 
-1.  Push this code to GitHub.
+1.  Push your code to GitHub.
 2.  Import the repository in Vercel.
 3.  **Important:** Set the **Root Directory** to `solar-next`.
-4.  Add environment variables (SMTP, Google Sheets URL).
-5.  Deploy! No extra configuration needed.
+4.  Add the environment variables listed above in the Vercel dashboard.
+5.  Deploy!
